@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: var(--font-inter-tight);
+    --font-mono: var(--font-jetbrains-mono);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-primary: #0891b2;
+    --animate-glitch: glitch 1s linear infinite;
+
+    @keyframes glitch {
+        0% {
+            transform: translate(0);
+        }
+
+        20% {
+            transform: translate(-2px, 2px);
+        }
+
+        40% {
+            transform: translate(-2px, -2px);
+        }
+
+        60% {
+            transform: translate(2px, 2px);
+        }
+
+        80% {
+            transform: translate(2px, -2px);
+        }
+
+        100% {
+            transform: translate(0);
+        }
+    }
+}
+
+@layer base {
+    :root {
+        --background: #f8fafc;
+        --foreground: #0f172a;
+    }
+
+    body {
+        background-color: var(--background);
+        color: var(--foreground);
+    }
+}
+
+.grid-bg {
+    background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+}
+
+@layer utilities {
+    .grid-bg {
+        background-image: linear-gradient(to right, hsl(var(--secondary)) 1px, transparent 1px),
+            linear-gradient(to bottom, hsl(var(--secondary)) 1px, transparent 1px);
+        background-size: 30px 30px;
+        mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+    }
+
+    @keyframes glitch {
+        0% {
+            transform: translate(0);
+        }
+
+        20% {
+            transform: translate(-2px, 2px);
+        }
+
+        40% {
+            transform: translate(2px, -2px);
+        }
+
+        60% {
+            transform: translate(-2px, 2px);
+        }
+
+        80% {
+            transform: translate(2px, -2px);
+        }
+
+        100% {
+            transform: translate(0);
+        }
+    }
+
+    .animate-glitch-hover:hover {
+        animation: glitch 0.3s linear;
+    }
+}
+
+@tailwind utilities;

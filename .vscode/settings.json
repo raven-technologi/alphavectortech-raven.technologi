@@ -1,0 +1,23 @@
+{
+    // Workspace-level settings to point common VS Code chat/OpenAI extensions at the local Gemini proxy
+    // Many extensions look for one of these keys; setting multiple increases chance an installed extension will pick them up.
+    "openai.apiBaseUrl": "http://localhost:3000",
+    "openai.apiBase": "http://localhost:3000",
+    "openai.apiHost": "http://localhost:3000",
+    "openai.apiKey": "local_dev_key",
+    "chatgpt.endpoint": "http://localhost:3000",
+    "chatgpt.serverUrl": "http://localhost:3000",
+    "chatgpt.apiEndpoint": "http://localhost:3000",
+    "chatgpt.apiKey": "local_dev_key",
+    "codegpt.openaiHost": "http://localhost:3000",
+    "codegpt.apiKey": "local_dev_key",
+    "vscode-chatgpt.apiRoot": "http://localhost:3000",
+    "vscode-chatgpt.apiKey": "local_dev_key",
+    "copilot.chat.endpoint": "http://localhost:3000",
+    // Some extensions read environment variables — VS Code supports workspace env files via extensions.
+    // This is a convenience for users/extensions that source .env in the workspace.
+    "dotenv.enableAutoreload": true,
+    // Keep telemetry off for the proxy usage if any extensions ask for it
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false
+}
