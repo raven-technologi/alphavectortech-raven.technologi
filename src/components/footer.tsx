@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site"
 import { researchPapers } from "@/lib/research-papers"
 import { Mail, Linkedin, FileText } from "lucide-react"
 
-export function Footer() {
+export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
@@ -122,3 +122,4 @@ export function Footer() {
     </footer>
   )
 }
+
