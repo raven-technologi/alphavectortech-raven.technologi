@@ -43,11 +43,11 @@ const MensReaVectorContent = () => {
         </p>
 
         <div className="formula">
-          {`K(t) = {P(s | I₀, I₁, ..., Iₜ) : s ∈ S}`}
+          {`K(t) = {P(s | I₀, I<sub>1</sub>, ..., Iₜ) : s ∈ S}`}
         </div>
 
         <p className="research-paragraph">
-          where I₀, I₁, ..., Iₜ represents the information available to the executive through time t. The entropy of this distribution quantifies uncertainty:
+          where I₀, I<sub>1</sub>, ..., Iₜ represents the information available to the executive through time t. The entropy of this distribution quantifies uncertainty:
         </p>
 
         <div className="formula">
@@ -79,7 +79,7 @@ const MensReaVectorContent = () => {
         </p>
 
         <p className="research-paragraph">
-          The posterior probability of harmful system states after observing signal sequence σ = {σ₁, ..., σₙ} follows Bayes' rule:
+          The posterior probability of harmful system states after observing signal sequence σ = {σ<sub>1</sub>, ..., σₙ} follows Bayes' rule:
         </p>
 
         <div className="formula">
