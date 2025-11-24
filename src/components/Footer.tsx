@@ -1,92 +1,124 @@
-import Link from 'next/link';
-import Image from 'next/image';
+"use client"
 
-export default function Footer() {
+import Link from "next/link"
+import { siteConfig } from "@/config/site"
+import { researchPapers } from "@/lib/research-papers"
+import { Mail, Linkedin, FileText } from "lucide-react"
+
+export function Footer() {
+  const currentYear = new Date().getFullYear()
+
   return (
-    <footer className="bg-primary border-t border-border-subtle">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
-              <Image 
-                src="/logo-cyan.png" 
-                alt="Alpha Vector Technologies" 
-                width={40} 
-                height={40}
-                className="w-10 h-10"
-              />
-              <span className="text-lg font-semibold text-text-primary">Alpha Vector Technologies</span>
-            </div>
-            <p className="text-text-secondary text-sm mb-4 max-w-md">
-              Institutional security research and digital accountability frameworks. Pioneering causal forensics methodologies for algorithmic negligence attribution.
+    <footer className="relative z-10 border-t border-slate-200 bg-white">
+      <div className="mx-auto max-w-7xl px-8 py-16 sm:px-12 lg:px-16">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
+          
+          {/* Brand Column */}
+          <div className="md:col-span-1">
+            <Link href="/" className="text-lg font-medium tracking-tight text-slate-900">
+              {siteConfig.shortName}
+            </Link>
+            <p className="mt-4 text-sm text-slate-600">
+              {siteConfig.description}
             </p>
-            <p className="text-text-tertiary text-xs font-mono">ABN: 50 353 196 500</p>
-            <p className="text-text-tertiary text-xs mt-1">Principal Researcher: Gavin Sangedha</p>
-            <p className="text-text-tertiary text-xs mt-1">South Australia</p>
+            <p className="mt-4 font-mono text-xs text-slate-400">
+              ABN: {siteConfig.abn}
+            </p>
           </div>
 
-          {/* Research Papers */}
+          {/* Research Column */}
           <div>
-            <h4 className="text-text-primary font-semibold mb-4">Research Papers</h4>
-            <ul className="space-y-2">
+            <h3 className="font-mono text-xs uppercase tracking-widest text-slate-500 mb-4">
+              Research Index
+            </h3>
+            <ul className="space-y-3">
+              {researchPapers.map((paper) => (
+                <li key={paper.id}>
+                  <Link 
+                    href={`/research/${paper.slug}`}
+                    className="text-sm text-slate-600 hover:text-primary transition-colors line-clamp-1"
+                  >
+                    {paper.title.split(':')[0]}
+                  </Link>
+                </li>
+              ))}
               <li>
-                <Link href="/research/mens-rea-vector" className="text-text-secondary hover:text-accent text-sm transition-colors">
-                  The Mens Rea Vector
-                </Link>
-              </li>
-              <li>
-                <Link href="/research/byzantine-calculus" className="text-text-secondary hover:text-accent text-sm transition-colors">
-                  The Byzantine Calculus
-                </Link>
-              </li>
-              <li>
-                <Link href="/research/sangedha-framework" className="text-text-secondary hover:text-accent text-sm transition-colors">
-                  The Sangedha Framework
+                <Link 
+                  href="/research"
+                  className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+                >
+                  <FileText className="w-3 h-3" />
+                  View All Publications
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Links */}
+          {/* Navigation Column */}
           <div>
-            <h4 className="text-text-primary font-semibold mb-4">Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/about" className="text-text-secondary hover:text-accent text-sm transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/methodologies" className="text-text-secondary hover:text-accent text-sm transition-colors">
-                  Methodologies
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-text-secondary hover:text-accent text-sm transition-colors">
-                  Contact
-                </Link>
-              </li>
+            <h3 className="font-mono text-xs uppercase tracking-widest text-slate-500 mb-4">
+              Navigation
+            </h3>
+            <ul className="space-y-3">
+              {siteConfig.mainNav.map((item) => (
+                <li key={item.href}>
+                  <Link 
+                    href={item.href}
+                    className="text-sm text-slate-600 hover:text-primary transition-colors"
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
+          </div>
+
+          {/* Contact Column */}
+          <div>
+            <h3 className="font-mono text-xs uppercase tracking-widest text-slate-500 mb-4">
+              Principal Researcher
+            </h3>
+            <div className="space-y-3">
+              <p className="text-sm font-medium text-slate-900">
+                {siteConfig.founder.name}
+              </p>
+              <p className="text-sm text-slate-600">
+                {siteConfig.founder.title}
+              </p>
+              <div className="flex items-center gap-4 pt-2">
+                <a 
+                  href={`mailto:gsangedha.desk@proton.me`}
+                  className="text-slate-500 hover:text-primary transition-colors"
+                  title="Email"
+                >
+                  <Mail className="w-5 h-5" />
+                </a>
+                <a 
+                  href={siteConfig.links.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-500 hover:text-primary transition-colors"
+                  title="LinkedIn"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border-subtle flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-text-tertiary text-xs">
-            © 2025 Alpha Vector Technologies. All rights reserved.
+        {/* Bottom Bar */}
+        <div className="mt-12 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-slate-400">
+            © {currentYear} {siteConfig.name}. All rights reserved.
           </p>
-          <p className="text-text-tertiary text-xs mt-2 sm:mt-0">
-            Registered Business Name • ABN: 50 353 196 500
-          </p>
-        </div>
-
-        {/* Legal Disclaimer */}
-        <div className="mt-8 p-4 bg-surface-elevated rounded-lg border border-border-subtle">
-          <p className="text-text-tertiary text-xs">
-            <strong className="text-text-secondary">Legal Disclaimer:</strong> The research and methodologies presented on this website are for informational and educational purposes only. They do not constitute legal advice and should not be relied upon as such. For legal matters, please consult with qualified legal counsel. Alpha Vector Technologies maintains rigorous research standards and documents all methodologies in accordance with peer-reviewed scientific protocols.
-          </p>
+          <div className="flex items-center gap-6 text-xs text-slate-400">
+            <span>Adelaide, South Australia</span>
+            <span>•</span>
+            <span className="font-mono">+61 489 218 235</span>
+          </div>
         </div>
       </div>
     </footer>
-  );
+  )
 }
