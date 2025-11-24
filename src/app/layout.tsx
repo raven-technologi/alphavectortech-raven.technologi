@@ -1,74 +1,74 @@
-import type { Metadata } from "next";
-import { Inter_Tight, JetBrains_Mono } from "next/font/google";
-import "./globals.css";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
+import { Inter } from 'next/font/google';
+import './globals.css';
+import { Navigation } from '@/components/Navigation';
+import Footer from '@/components/Footer';
+import { Metadata } from 'next';
 
-const interTight = Inter_Tight({
-  subsets: ["latin"],
-  variable: "--font-inter-tight",
-  display: "swap",
-  weight: ["300", "400", "500", "600"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
-  display: "swap",
-});
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://alphavectortech.com'),
   title: {
-    default: "Alpha Vector Technologies | Forensic Methodologies for Digital Accountability",
-    template: "%s | Alpha Vector Technologies",
+    default: 'Alpha Vector Tech | Gavin Sangedha | ABN: 50 353 196 500',
+    template: '%s | Alpha Vector Tech'
   },
-  description: "Institutional-grade forensic methodologies for algorithmic negligence attribution, distributed ledger security quantification, and executive liability reconstruction. Principal Researcher: Gavin Sangedha.",
+  description: 'Forensic intelligence and algorithmic accountability research firm. Founded by Gavin Sangedha. ABN: 50 353 196 500',
+  authors: [{ name: 'Gavin Sangedha', url: 'https://alphavectortech.com' }],
+  creator: 'Gavin Sangedha',
+  publisher: 'Alpha Vector Tech',
   keywords: [
-    "algorithmic negligence",
-    "digital forensics",
-    "executive liability",
-    "causal attribution",
-    "distributed ledger security",
-    "Caremark compliance",
-    "Daubert admissibility",
-    "Gavin Sangedha",
-    "Alpha Vector Technologies",
-    "forensic methodologies",
-    "AI accountability",
-    "corporate governance"
+    'Gavin Sangedha',
+    'Alpha Vector Tech',
+    'ABN 50 353 196 500',
+    'forensic intelligence',
+    'algorithmic accountability',
+    'executive liability',
+    'mens rea vector',
+    'byzantine calculus',
+    'sangedha framework'
   ],
-  authors: [{ name: "Gavin Sangedha", url: "https://alphavectortech.com" }],
-  creator: "Alpha Vector Technologies",
   openGraph: {
-    type: "website",
-    locale: "en_AU",
-    url: "https://alphavectortech.com",
-    siteName: "Alpha Vector Technologies",
-    title: "Alpha Vector Technologies | Forensic Methodologies for Digital Accountability",
-    description: "Institutional-grade forensic methodologies for algorithmic negligence attribution and executive liability reconstruction.",
+    type: 'website',
+    locale: 'en_AU',
+    url: 'https://alphavectortech.com',
+    siteName: 'Alpha Vector Tech',
+    title: 'Alpha Vector Tech - Forensic Intelligence Research',
+    description: 'Founded by Gavin Sangedha. Australian Business Number: 50 353 196 500',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Alpha Vector Technologies",
-    description: "Forensic Methodologies for Digital Accountability",
+    card: 'summary_large_image',
+    title: 'Alpha Vector Tech | Gavin Sangedha',
+    description: 'Forensic Intelligence Research Firm | ABN: 50 353 196 500',
+    creator: '@gavinsangedha',
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  verification: {
+    google: 'verification-token',
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={`${interTight.variable} ${jetbrainsMono.variable} min-h-screen bg-slate-50 font-sans text-slate-900 antialiased`}>
-        <div className="fixed inset-0 z-0 pointer-events-none opacity-30 grid-bg"></div>
-        <Navbar />
-        <main className="relative z-10 flex min-h-screen flex-col items-center pt-20">
+      <head>
+        <meta name="author" content="Gavin Sangedha" />
+        <meta name="company" content="Alpha Vector Tech" />
+        <meta name="abn" content="50 353 196 500" />
+      </head>
+      <body className={inter.className}>
+        <Navigation />
+        <main className="pt-16 min-h-screen">
           {children}
         </main>
         <Footer />
