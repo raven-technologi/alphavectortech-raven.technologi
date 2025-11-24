@@ -1,95 +1,334 @@
 @import "tailwindcss";
 
+/* Professional Typography System - Legal Grade */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 @theme {
-    --font-sans: var(--font-inter-tight);
-    --font-mono: var(--font-jetbrains-mono);
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --color-primary: #0891b2;
-    --animate-glitch: glitch 1s linear infinite;
-
-    @keyframes glitch {
-        0% {
-            transform: translate(0);
-        }
-
-        20% {
-            transform: translate(-2px, 2px);
-        }
-
-        40% {
-            transform: translate(-2px, -2px);
-        }
-
-        60% {
-            transform: translate(2px, 2px);
-        }
-
-        80% {
-            transform: translate(2px, -2px);
-        }
-
-        100% {
-            transform: translate(0);
-        }
-    }
+    --font-serif: 'EB Garamond', 'Georgia', serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+    
+    /* Precision Color System */
+    --color-background: #ffffff;
+    --color-foreground: #0a0a0a;
+    --color-muted: #6b7280;
+    --color-accent: #0891b2;
+    --color-border: #e5e7eb;
+    
+    /* Professional Spacing Scale */
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 6rem;
+    
+    /* Typography Scale */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
+    
+    /* Line Heights */
+    --leading-tight: 1.25;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.625;
+    --leading-loose: 1.75;
 }
 
 @layer base {
     :root {
-        --background: #f8fafc;
-        --foreground: #0f172a;
+        --background: #ffffff;
+        --foreground: #0a0a0a;
+    }
+
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
     }
 
     body {
         background-color: var(--background);
         color: var(--foreground);
+        font-family: var(--font-serif);
+        font-size: var(--text-lg);
+        line-height: var(--leading-relaxed);
+        letter-spacing: 0.01em;
+    }
+    
+    /* Professional Typography Hierarchy */
+    h1 {
+        font-family: var(--font-serif);
+        font-size: var(--text-5xl);
+        font-weight: 600;
+        line-height: var(--leading-tight);
+        letter-spacing: -0.02em;
+        margin-top: 0;
+        margin-bottom: var(--space-2xl);
+    }
+    
+    h2 {
+        font-family: var(--font-serif);
+        font-size: var(--text-3xl);
+        font-weight: 600;
+        line-height: var(--leading-tight);
+        letter-spacing: -0.01em;
+        margin-top: var(--space-4xl);
+        margin-bottom: var(--space-xl);
+        padding-top: var(--space-lg);
+        border-top: 1px solid var(--color-border);
+    }
+    
+    h3 {
+        font-family: var(--font-serif);
+        font-size: var(--text-2xl);
+        font-weight: 600;
+        line-height: var(--leading-normal);
+        margin-top: var(--space-3xl);
+        margin-bottom: var(--space-lg);
+    }
+    
+    h4 {
+        font-family: var(--font-sans);
+        font-size: var(--text-xl);
+        font-weight: 600;
+        line-height: var(--leading-normal);
+        margin-top: var(--space-2xl);
+        margin-bottom: var(--space-md);
+        letter-spacing: 0;
+    }
+    
+    /* Paragraph Spacing - Legal Standard */
+    p {
+        margin-bottom: var(--space-lg);
+        text-align: justify;
+        hyphens: auto;
+    }
+    
+    p:first-of-type {
+        margin-top: 0;
+    }
+    
+    /* Professional Strong Emphasis */
+    strong {
+        font-weight: 600;
+        color: var(--foreground);
+    }
+    
+    em {
+        font-style: italic;
+    }
+    
+    /* Block Quotes */
+    blockquote {
+        margin: var(--space-2xl) 0;
+        padding-left: var(--space-xl);
+        border-left: 3px solid var(--color-accent);
+        font-style: italic;
+        color: var(--color-muted);
+    }
+    
+    /* Code Blocks */
+    code {
+        font-family: var(--font-mono);
+        font-size: 0.9em;
+        background: #f3f4f6;
+        padding: 0.125rem 0.25rem;
+        border-radius: 0.25rem;
+    }
+    
+    pre {
+        background: #1f2937;
+        color: #f9fafb;
+        padding: var(--space-lg);
+        border-radius: 0.5rem;
+        overflow-x: auto;
+        margin: var(--space-xl) 0;
+    }
+    
+    pre code {
+        background: transparent;
+        padding: 0;
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+    
+    /* Lists */
+    ul, ol {
+        margin: var(--space-lg) 0;
+        padding-left: var(--space-xl);
+    }
+    
+    li {
+        margin-bottom: var(--space-sm);
+    }
+    
+    /* Links */
+    a {
+        color: var(--color-accent);
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.125rem;
+        transition: all 0.2s ease;
+    }
+    
+    a:hover {
+        color: #0369a1;
+        text-decoration-thickness: 2px;
     }
 }
 
-.grid-bg {
-    background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
-    background-size: 40px 40px;
-    mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+/* Research Paper Specific Styles */
+.research-paper {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: var(--space-4xl) var(--space-2xl);
+    background: white;
+    min-height: 100vh;
 }
 
-@layer utilities {
-    .grid-bg {
-        background-image: linear-gradient(to right, hsl(var(--secondary)) 1px, transparent 1px),
-            linear-gradient(to bottom, hsl(var(--secondary)) 1px, transparent 1px);
-        background-size: 30px 30px;
-        mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
-    }
-
-    @keyframes glitch {
-        0% {
-            transform: translate(0);
-        }
-
-        20% {
-            transform: translate(-2px, 2px);
-        }
-
-        40% {
-            transform: translate(2px, -2px);
-        }
-
-        60% {
-            transform: translate(-2px, 2px);
-        }
-
-        80% {
-            transform: translate(2px, -2px);
-        }
-
-        100% {
-            transform: translate(0);
-        }
-    }
-
-    .animate-glitch-hover:hover {
-        animation: glitch 0.3s linear;
-    }
+.research-header {
+    margin-bottom: var(--space-4xl);
+    padding-bottom: var(--space-2xl);
+    border-bottom: 2px solid var(--color-border);
 }
 
-@tailwind utilities;
+.research-title {
+    font-size: var(--text-5xl);
+    line-height: 1.15;
+    font-weight: 600;
+    margin-bottom: var(--space-xl);
+    letter-spacing: -0.025em;
+}
+
+.research-abstract {
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+    color: var(--color-muted);
+    font-style: italic;
+    margin: var(--space-2xl) 0;
+    padding: var(--space-xl);
+    background: #f9fafb;
+    border-left: 4px solid var(--color-accent);
+}
+
+.research-section {
+    margin: var(--space-4xl) 0;
+}
+
+.research-section h2 {
+    font-size: var(--text-3xl);
+    margin-top: var(--space-4xl);
+    margin-bottom: var(--space-xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-border);
+}
+
+.research-section h3 {
+    font-size: var(--text-2xl);
+    margin-top: var(--space-3xl);
+    margin-bottom: var(--space-lg);
+}
+
+.research-paragraph {
+    font-size: var(--text-lg);
+    line-height: var(--leading-loose);
+    margin-bottom: var(--space-xl);
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* Mathematical Formulas */
+.formula {
+    display: block;
+    margin: var(--space-2xl) 0;
+    padding: var(--space-lg);
+    background: #f9fafb;
+    border: 1px solid var(--color-border);
+    font-family: var(--font-mono);
+    text-align: center;
+    overflow-x: auto;
+}
+
+/* Case Studies */
+.case-study {
+    margin: var(--space-3xl) 0;
+    padding: var(--space-xl);
+    background: linear-gradient(to right, #f9fafb 4px, transparent 4px);
+    border-left: 4px solid var(--color-accent);
+}
+
+.case-study-title {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-md);
+    color: var(--color-accent);
+}
+
+/* Footnotes */
+.footnote {
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+    color: var(--color-muted);
+    vertical-align: super;
+    margin-left: 0.125rem;
+}
+
+.footnotes {
+    margin-top: var(--space-4xl);
+    padding-top: var(--space-2xl);
+    border-top: 2px solid var(--color-border);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+}
+
+/* Print Styles */
+@media print {
+    body {
+        font-size: 11pt;
+        line-height: 1.5;
+    }
+    
+    .research-paper {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; page-break-before: auto; }
+    h3 { font-size: 12pt; }
+    p { text-align: justify; orphans: 3; widows: 3; }
+    
+    a { color: var(--foreground); text-decoration: none; }
+    
+    .no-print { display: none; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .research-paper {
+        padding: var(--space-2xl) var(--space-lg);
+    }
+    
+    .research-title {
+        font-size: var(--text-4xl);
+    }
+    
+    h2 {
+        font-size: var(--text-2xl);
+    }
+    
+    p {
+        text-align: left;
+        hyphens: none;
+    }
+}
