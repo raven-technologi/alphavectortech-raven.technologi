@@ -79,7 +79,7 @@ const MensReaVectorContent = () => {
         </p>
 
         <p className="research-paragraph">
-          The posterior probability of harmful system states after observing signal sequence σ = {σ<sub>1</sub>, ..., σₙ} follows Bayes' rule:
+          The posterior probability of harmful system states after observing signal sequence σ = (σ<sub>1</sub>, ..., σ<sub>n</sub>) follows Bayes' rule:
         </p>
 
         <div className="formula">
@@ -87,7 +87,7 @@ const MensReaVectorContent = () => {
         </div>
 
         <p className="research-paragraph">
-          The likelihood ratio L = P(σ | harm) / P(σ | safe) quantifies how strongly the observed signals indicate harmful states. When L >> 1 but executives failed to investigate or remediate, the framework establishes constructive knowledge of risks. Sequential likelihood ratios trace the evolution of warning signs, identifying when reasonable executives would have recognized dangers.
+          The likelihood ratio L = P(σ | harm) / P(σ | safe) quantifies how strongly the observed signals indicate harmful states. When L &gt;&gt; 1 but executives failed to investigate or remediate, the framework establishes constructive knowledge of risks. Sequential likelihood ratios trace the evolution of warning signs, identifying when reasonable executives would have recognized dangers.
         </p>
 
         <p className="research-paragraph">
@@ -261,3 +261,5 @@ const MensReaVectorPage = () => {
 };
 
 export default MensReaVectorPage;
+
+
