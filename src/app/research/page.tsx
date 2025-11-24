@@ -1,5 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Research Papers | Alpha Vector Tech | Gavin Sangedha',
+  description: 'Advanced forensic frameworks by Gavin Sangedha for algorithmic accountability, distributed system governance, and executive liability.',
+};
 
 const ResearchPage = () => {
   const papers = [
@@ -9,7 +15,8 @@ const ResearchPage = () => {
       subtitle: 'Quantifying Distributed Ledger Security as Enterprise Financial Risk',
       abstract: 'A comprehensive framework translating consensus-layer security into board-comprehensible risk metrics, establishing fiduciary duties for oversight, and quantifying systemic contagion across interconnected DLT infrastructure.',
       date: 'January 2025',
-      readTime: '45 min read'
+      readTime: '45 min read',
+      author: 'Gavin Sangedha'
     },
     {
       slug: 'sangedha-framework',
@@ -17,7 +24,8 @@ const ResearchPage = () => {
       subtitle: 'Causal Forensics for Algorithmic Negligence',
       abstract: 'A mathematical methodology for forensic analysis of AI system failures that bridges technical causation with legal liability standards through causal inference, epistemic modeling, and network analysis.',
       date: 'January 2025',
-      readTime: '40 min read'
+      readTime: '40 min read',
+      author: 'Gavin Sangedha'
     },
     {
       slug: 'mens-rea-vector',
@@ -25,7 +33,8 @@ const ResearchPage = () => {
       subtitle: 'AI-Driven Epistemic Analysis for Executive Liability in Algorithmic Negligence',
       abstract: 'A novel framework for establishing mens rea—the guilty mind—when harmful decisions emerge from algorithmic processes, quantifying executive knowledge states and temporal evolution of awareness.',
       date: 'January 2025',
-      readTime: '50 min read'
+      readTime: '50 min read',
+      author: 'Gavin Sangedha'
     }
   ];
 
@@ -34,11 +43,17 @@ const ResearchPage = () => {
       <div className="max-w-6xl mx-auto px-6 py-16">
         {/* Header */}
         <header className="mb-16 pb-8 border-b-2 border-gray-200">
+          <div className="mb-4">
+            <p className="text-sm font-sans text-gray-600">
+              Alpha Vector Tech | ABN: 50 353 196 500
+            </p>
+          </div>
           <h1 className="text-5xl font-serif font-semibold text-gray-900 mb-4">
             Research Papers
           </h1>
           <p className="text-xl text-gray-600 font-serif italic">
-            Advanced frameworks for algorithmic accountability, distributed system governance, and executive liability in the age of artificial intelligence.
+            Advanced forensic frameworks by <strong>Gavin Sangedha</strong> for algorithmic accountability, 
+            distributed system governance, and executive liability in the age of artificial intelligence.
           </p>
         </header>
 
@@ -57,6 +72,8 @@ const ResearchPage = () => {
                       {paper.subtitle}
                     </h3>
                     <div className="flex items-center space-x-4 text-sm text-gray-500 font-sans">
+                      <span>{paper.author}</span>
+                      <span>•</span>
                       <span>{paper.date}</span>
                       <span>•</span>
                       <span>{paper.readTime}</span>
@@ -86,7 +103,10 @@ const ResearchPage = () => {
         {/* Footer */}
         <footer className="mt-20 pt-8 border-t border-gray-200">
           <p className="text-center text-gray-500 font-serif italic">
-            © 2025 Alpha Vector Technologies. All rights reserved.
+            © 2025 Alpha Vector Tech. All rights reserved.
+          </p>
+          <p className="text-center text-gray-400 font-sans text-sm mt-2">
+            Founded by Gavin Sangedha | Australian Business Number: 50 353 196 500
           </p>
         </footer>
       </div>

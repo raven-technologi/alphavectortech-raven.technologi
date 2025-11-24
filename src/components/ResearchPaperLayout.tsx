@@ -11,7 +11,7 @@ interface ResearchPaperLayoutProps {
 
 const ResearchPaperLayout: React.FC<ResearchPaperLayoutProps> = ({
   title,
-  authors = [],
+  authors = ['Gavin Sangedha'],
   date,
   backLink = '/research',
   children
@@ -73,6 +73,9 @@ const ResearchPaperLayout: React.FC<ResearchPaperLayoutProps> = ({
               <p className="text-lg font-sans text-gray-600">
                 {authors.join(', ')}
               </p>
+              <p className="text-sm font-sans text-gray-500 mt-1">
+                Principal Researcher, Alpha Vector Tech
+              </p>
             </div>
           )}
           
@@ -94,10 +97,10 @@ const ResearchPaperLayout: React.FC<ResearchPaperLayoutProps> = ({
         <footer className="mt-20 pt-8 border-t-2 border-gray-200">
           <div className="text-center">
             <p className="text-sm text-gray-500 font-sans">
-              © 2025 Alpha Vector Technologies. All rights reserved.
+              © 2025 Alpha Vector Tech. All rights reserved.
             </p>
             <p className="text-sm text-gray-400 font-sans mt-2">
-              Principal Researcher: Gavin McNicol | ABN: 50353196500
+              Principal Researcher: Gavin Sangedha | ABN: 50 353 196 500
             </p>
           </div>
         </footer>
