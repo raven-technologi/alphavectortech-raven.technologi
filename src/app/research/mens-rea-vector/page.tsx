@@ -43,15 +43,15 @@ const MensReaVectorContent = () => {
         </p>
 
         <div className="formula">
-          K(t) = {P(s | I₀, I₁, ..., I_t) : s ∈ S}
+          {`K(t) = {P(s | I₀, I₁, ..., Iₜ) : s ∈ S}`}
         </div>
 
         <p className="research-paragraph">
-          where I₀, I₁, ..., I_t represents the information available to the executive through time t. The entropy of this distribution quantifies uncertainty:
+          where I₀, I₁, ..., Iₜ represents the information available to the executive through time t. The entropy of this distribution quantifies uncertainty:
         </p>
 
         <div className="formula">
-          H(K(t)) = -Σₛ P(s | I₀, ..., I_t) log P(s | I₀, ..., I_t)
+          {`H(K(t)) = -Σₛ P(s | I₀, ..., Iₜ) log P(s | I₀, ..., Iₜ)`}
         </div>
 
         <p className="research-paragraph">
@@ -95,7 +95,7 @@ const MensReaVectorContent = () => {
         </p>
 
         <div className="formula">
-          Red Flag: P(σᵢ | harm) / P(σᵢ | safe) > θ
+          {`Red Flag: P(σᵢ | harm) / P(σᵢ | safe) > θ`}
         </div>
 
         <p className="research-paragraph">
@@ -115,7 +115,7 @@ const MensReaVectorContent = () => {
         </p>
 
         <div className="formula">
-          K_effective(v) = K_direct(v) ∪ {I : P(I reaches v) > τ}
+          {`Kₑffₑctᵢᵥₑ(v) = Kdᵢᵣₑct(v) ∪ {I : P(I reaches v) > τ}`}
         </div>
 
         <p className="research-paragraph">
@@ -127,7 +127,7 @@ const MensReaVectorContent = () => {
         </p>
 
         <div className="formula">
-          CB(v) = Σₛ≠ᵥ≠ₜ (σₛₜ(v) / σₛₜ)
+          {`CB(v) = Σₛ≠v≠t (σₛₜ(v) / σₛₜ)`}
         </div>
 
         <p className="research-paragraph">
@@ -147,7 +147,7 @@ const MensReaVectorContent = () => {
         </p>
 
         <div className="formula">
-          Deviation(t) = KL(R(t) || K(t)) = Σₛ R(t,s) log(R(t,s) / K(t,s))
+          {`Deviation(t) = KL(R(t) || K(t)) = Σₛ R(t,s) log(R(t,s) / K(t,s))`}
         </div>
 
         <p className="research-paragraph">
