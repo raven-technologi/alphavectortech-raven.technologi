@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Charter', 'Crimson Pro', 'Georgia', serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.333rem;
+  --text-xl: 1.777rem;
+  --text-2xl: 2.369rem;
+  --text-3xl: 3.158rem;
+  --text-4xl: 4.210rem;
+  
+  --leading-tight: 1.2;
+  --leading-base: 1.5;
+  --leading-relaxed: 1.75;
+  
+  --tracking-tight: -0.02em;
+  --tracking-base: 0;
+  --tracking-wide: 0.05em;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: #0D1117;
+  color: #F5F5F7;
+  line-height: var(--leading-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography for research papers */
+.prose-research {
+  font-family: var(--font-serif);
+  line-height: var(--leading-relaxed);
+}
+
+.prose-research h1, 
+.prose-research h2, 
+.prose-research h3, 
+.prose-research h4, 
+.prose-research h5 {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose-research h1 { font-size: var(--text-3xl); }
+.prose-research h2 { font-size: var(--text-2xl); color: #00D4FF; }
+.prose-research h3 { font-size: var(--text-xl); }
+.prose-research h4 { font-size: var(--text-lg); }
+
+.prose-research p {
+  margin-bottom: 1.5rem;
+  color: #A1A1A6;
+}
+
+.prose-research strong {
+  color: #F5F5F7;
+  font-weight: 600;
+}
+
+.prose-research code {
+  font-family: var(--font-mono);
+  background-color: #161B22;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.prose-research pre {
+  background-color: #161B22;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.prose-research pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.prose-research ul, .prose-research ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose-research li {
+  margin-bottom: 0.75rem;
+  color: #A1A1A6;
+}
+
+.prose-research blockquote {
+  border-left: 4px solid #00D4FF;
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #A1A1A6;
+}
+
+/* Math display */
+.math-block {
+  background-color: #161B22;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  text-align: center;
+  font-family: var(--font-mono);
+  color: #00D4FF;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+/* Navigation styles */
+.nav-link {
+  position: relative;
+  color: #A1A1A6;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #F5F5F7;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #00D4FF;
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Card hover effects */
+.research-card {
+  background-color: #161B22;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.research-card:hover {
+  border-color: rgba(0, 212, 255, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Button styles */
+.btn-primary {
+  background: linear-gradient(135deg, #00D4FF 0%, #0099CC 100%);
+  color: #0A0F14;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  color: #F5F5F7;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: #00D4FF;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #00D4FF 0%, #10B981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D1117;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1F2937;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+/* Selection styling */
+::selection {
+  background-color: rgba(0, 212, 255, 0.3);
+  color: #F5F5F7;
+}

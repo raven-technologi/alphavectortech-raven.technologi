@@ -1,0 +1,7 @@
+CHECKPOINT: about-page
+Timestamp: 2025-11-25T06:29:30+10:30
+File: src/app/about/page.tsx
+Status: VERIFIED
+Size: 10126 bytes
+Lines: 148
+Content: Complete About page with business identity, bio, research philosophy

@@ -1,0 +1,10 @@
+CHECKPOINT: sangedha-framework-page
+Timestamp: 2025-11-25T06:27:00+10:30
+File: src/app/research/sangedha-framework/page.tsx
+Status: VERIFIED
+Size: 43946 bytes
+Lines: 321
+First Line: 'use client';
+Last Line: }
+Content: Complete Sangedha Framework research paper (~5,500 words)
+Verified By: Claude - Desktop Commander get_file_info + read_file
