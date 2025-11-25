@@ -20,7 +20,7 @@ export default function Footer() {
               Advanced epistemic forensics and distributed ledger security analysis.
             </p>
             <p className="mt-4 font-mono text-xs text-slate-400">
-              ABN: 86 646 066 149
+              ABN: 50 353 196 500
             </p>
           </div>
 
