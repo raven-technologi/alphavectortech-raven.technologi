@@ -10,9 +10,9 @@ export default function RelatedResearch({ currentPath }: RelatedResearchProps) {
   const otherPapers = researchPapers.filter(paper => paper.href !== currentPath)
 
   return (
-    <section className="mt-16 border-t border-white/10 py-16">
+  <section className="mt-16 border-t border-black/10 py-16">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-8 flex items-center gap-3 text-[11px] font-mono uppercase tracking-[0.35em] text-[#7a7a7a]">
+  <div className="mb-8 flex items-center gap-3 microtype microtype--muted text-[11px] tracking-[0.35em]">
           <span className="h-px w-10 bg-white/15" />
           Related Research
         </div>

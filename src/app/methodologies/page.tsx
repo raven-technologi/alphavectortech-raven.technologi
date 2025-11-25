@@ -6,13 +6,19 @@ import PageFrame from '@/components/PageFrame'
 export default function MethodologiesPage() {
   return (
     <PageFrame
-      tag="DOSSIER // 03"
-      title="Methodological Architecture"
+      tag="DOSSIER | 03"
       description="Operational doctrine spanning vulnerability research, forensic reconstruction, and legal-technical harmonization."
+      showHeading={false}
+      showTagBarcode
     >
-      <section className="rounded-3xl border border-white/10 bg-white/[0.02] p-8">
-        <h2 className="text-[11px] font-mono uppercase tracking-[0.35em] text-[#6c6c6c]">Bug Bounty & Vulnerability Research</h2>
-        <div className="prose-research mt-6">
+      <section className="rounded-3xl border border-black/10 bg-white p-8">
+        <div className="border-b border-black/10 pb-8">
+          <p className="text-[11px] font-mono uppercase tracking-[0.35em] text-[#4b6bff]">Methodology Register</p>
+          <h1 className="mt-4 text-4xl font-light tracking-tight text-[#010409]">Methodological Architecture</h1>
+          <p className="mt-3 text-base text-[#050505]">A technical canon aligning bug bounty research, forensic reconstruction, disclosure choreography, and legal synthesis under one evidentiary rubric.</p>
+        </div>
+        <div className="prose-research mt-10">
+          <h2>Bug Bounty &amp; Vulnerability Research</h2>
           <p>Alpha Vector Technologies conducts security research following industry best practices and responsible disclosure principles. Our methodology prioritizes:</p>
           <h4>Pre-Engagement Assessment</h4>
           <ul>
@@ -38,8 +44,8 @@ export default function MethodologiesPage() {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-white/10 bg-white/[0.015] p-8">
-        <h2 className="text-[11px] font-mono uppercase tracking-[0.35em] text-[#6c6c6c]">Responsible Disclosure Protocol</h2>
+      <section className="rounded-3xl border border-black/10 bg-[#f8faff] p-8">
+  <h2 className="text-[11px] font-mono uppercase tracking-[0.35em] text-[#010409]">Responsible Disclosure Protocol</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {[
             {
@@ -67,17 +73,17 @@ export default function MethodologiesPage() {
                 'Post-patch disclosure coordinated with vendor. Technical details released to enable defensive measures while minimizing exploitation risk.',
             },
           ].map((item) => (
-            <div key={item.step} className="border border-white/10 p-6">
-              <p className="text-[10px] font-mono uppercase tracking-[0.4em] text-[#00ffff]">{item.step}</p>
-              <h3 className="mt-3 text-xl font-light text-white">{item.title}</h3>
-              <p className="mt-3 text-sm text-[#c2c2c2]">{item.copy}</p>
+            <div key={item.step} className="border border-black/10 bg-white p-6">
+              <p className="text-[10px] font-mono uppercase tracking-[0.4em] text-[#4b6bff]">{item.step}</p>
+              <h3 className="mt-3 text-xl font-light text-[#010409]">{item.title}</h3>
+              <p className="mt-3 text-sm text-[#050505]">{item.copy}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="rounded-3xl border border-white/10 bg-white/[0.02] p-8">
-        <h2 className="text-[11px] font-mono uppercase tracking-[0.35em] text-[#6c6c6c]">Forensic Reconstruction Techniques</h2>
+      <section className="rounded-3xl border border-black/10 bg-white p-8">
+  <h2 className="text-[11px] font-mono uppercase tracking-[0.35em] text-[#010409]">Forensic Reconstruction Techniques</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {[
             {
@@ -122,10 +128,10 @@ export default function MethodologiesPage() {
               ],
             },
           ].map((item) => (
-            <div key={item.title} className="border border-white/10 p-6">
-              <h3 className="text-xl font-light text-white">{item.title}</h3>
-              <p className="mt-3 text-sm text-[#c2c2c2]">{item.copy}</p>
-              <ul className="mt-4 space-y-1 text-xs text-[#7d7d7d]">
+            <div key={item.title} className="border border-black/10 bg-[#f8faff] p-6">
+              <h3 className="text-xl font-light text-[#010409]">{item.title}</h3>
+              <p className="mt-3 text-sm text-[#050505]">{item.copy}</p>
+              <ul className="mt-4 space-y-1 text-xs text-[#4b5674]">
                 {item.bullets.map((bullet) => (
                   <li key={bullet}>• {bullet}</li>
                 ))}
@@ -135,8 +141,8 @@ export default function MethodologiesPage() {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-white/10 bg-white/[0.015] p-8">
-        <h2 className="text-[11px] font-mono uppercase tracking-[0.35em] text-[#6c6c6c]">Legal-Technical Synthesis</h2>
+      <section className="rounded-3xl border border-black/10 bg-white p-8">
+  <h2 className="text-[11px] font-mono uppercase tracking-[0.35em] text-[#010409]">Legal-Technical Synthesis</h2>
         <div className="prose-research mt-6">
           <p>Our methodology bridges the gap between technical findings and legal requirements, ensuring research outputs are admissible and compelling in legal proceedings.</p>
           <h4>Daubert Compliance</h4>
@@ -159,22 +165,22 @@ export default function MethodologiesPage() {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-[#00ffff]/30 bg-[#00ffff]/5 p-8">
+      <section className="rounded-3xl border border-[#4b6bff]/30 bg-[#eef1ff] p-8">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div>
-            <h3 className="text-2xl font-light text-white">Explore the primary research corpus</h3>
-            <p className="mt-3 text-sm text-[#0b2c2c] md:text-base">
+            <h3 className="text-2xl font-light text-[#010409]">Explore the primary research corpus</h3>
+            <p className="mt-3 text-sm text-[#050505] md:text-base">
               Detailed technical specifications for applying these methodologies in live engagements.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link href="/research/mens-rea-vector" className="rounded-2xl border border-white/20 px-6 py-3 text-[10px] font-mono uppercase tracking-[0.3em] text-white">
+            <Link href="/research/mens-rea-vector" className="rounded-2xl border border-[#010409]/20 px-6 py-3 text-[10px] font-mono uppercase tracking-[0.3em] text-[#010409]">
               Mens Rea Vector
             </Link>
-            <Link href="/research/byzantine-calculus" className="rounded-2xl border border-white/20 px-6 py-3 text-[10px] font-mono uppercase tracking-[0.3em] text-white">
+            <Link href="/research/byzantine-calculus" className="rounded-2xl border border-[#010409]/20 px-6 py-3 text-[10px] font-mono uppercase tracking-[0.3em] text-[#010409]">
               Byzantine Calculus
             </Link>
-            <Link href="/research/sangedha-framework" className="rounded-2xl border border-white/20 px-6 py-3 text-[10px] font-mono uppercase tracking-[0.3em] text-white">
+            <Link href="/research/sangedha-framework" className="rounded-2xl border border-[#010409]/20 px-6 py-3 text-[10px] font-mono uppercase tracking-[0.3em] text-[#010409]">
               Sangedha Framework
             </Link>
           </div>

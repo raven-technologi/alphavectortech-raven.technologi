@@ -727,7 +727,7 @@ $$\text{PN}_{\text{lower}} = \frac{0.78 - 0.12}{0.78} = 0.846$$
 └──────────────────────────────────────────────────────────┘
 ```
 
-### Continuous Scienter Monitoring
+### Continuous Scienter Monitoring:
 
 ```python
 class ContinuousScienterMonitor:
@@ -819,7 +819,7 @@ class ContinuousScienterMonitor:
         return posterior
 ```
 
-### Board-Level Governance Dashboard
+### Board-Level Governance Dashboard:
 
 ```python
 class ExecutiveDashboard:

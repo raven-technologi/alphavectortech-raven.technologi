@@ -30,51 +30,119 @@ html.lenis body {
 :root {
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: 'Charter', 'Crimson Pro', 'Georgia', serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-  
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.333rem;
-  --text-xl: 1.777rem;
-  --text-2xl: 2.369rem;
-  --text-3xl: 3.158rem;
-  --text-4xl: 4.210rem;
-  
-  --leading-tight: 1.2;
-  --leading-base: 1.5;
-  --leading-relaxed: 1.75;
-  
-  --tracking-tight: -0.02em;
-  --tracking-base: 0;
-  --tracking-wide: 0.05em;
+  --font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 }
 
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.code-specimen {
+  margin: 2.5rem 0;
+  border: 1px solid rgba(1, 4, 9, 0.12);
+  border-radius: 1.75rem;
+  padding: 1.75rem;
+  background: radial-gradient(circle at 22% 18%, rgba(75, 107, 255, 0.12), rgba(255, 255, 255, 0.98));
+  box-shadow: 0 45px 90px rgba(6, 16, 45, 0.18);
 }
 
-body {
-  overflow-x: hidden;
-  overflow-y: auto !important;
+.code-specimen__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
 }
 
-body {
-  font-family: var(--font-primary);
-  background-color: #0D1117;
-  color: #F5F5F7;
-  line-height: var(--leading-base);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.code-specimen__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: rgba(1, 4, 9, 0.5);
 }
 
-/* Typography for research papers */
+.code-specimen__title {
+  margin-top: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #010409;
+}
+
+.code-specimen__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #4b6bff;
+}
+
+.code-specimen pre {
+  position: relative;
+  margin: 1.75rem 0 1.25rem;
+  background: #050915;
+  color: #e5edff;
+  padding: 1.75rem 2rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 40px 70px rgba(5, 9, 21, 0.45);
+  overflow-x: auto;
+  isolation: isolate;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.code-specimen pre::before {
+  content: attr(data-language);
+  position: absolute;
+  top: 0.85rem;
+  right: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.4em;
+  color: rgba(229, 237, 255, 0.6);
+}
+
+.code-specimen pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  display: block;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: inherit;
+}
+
+.code-specimen__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(1, 4, 9, 0.6);
+  border-top: 1px dashed rgba(1, 4, 9, 0.2);
+  padding-top: 0.85rem;
+}
+
+.code-specimen__footer span:last-child {
+  color: #4b6bff;
+}
+
+/* Typography for research papers — Gemini Deep Research aesthetic */
 .prose-research {
   font-family: var(--font-primary);
-  line-height: var(--leading-relaxed);
-  letter-spacing: 0.01em;
-  font-size: 1.02rem;
+  line-height: 1.7;
+  letter-spacing: -0.011em;
+  font-size: 1.0625rem;
+  color: #1f1f1f;
+  font-weight: 400;
 }
 
 .prose-research h1,
@@ -83,61 +151,73 @@ body {
 .prose-research h4,
 .prose-research h5 {
   font-family: var(--font-primary);
-  font-weight: 300;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.022em;
   text-transform: none;
-  margin-top: 2.25rem;
-  margin-bottom: 0.75rem;
+  color: #0d0d0d;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.25;
 }
 
 .prose-research h1 {
-  font-size: var(--text-3xl);
-  color: #f7fafa;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
 }
 
 .prose-research h2 {
-  font-size: calc(var(--text-2xl) - 0.2rem);
-  color: #e0f7ff;
-  line-height: 1.2;
-  font-weight: 300;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 3rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .prose-research h3 {
-  font-size: calc(var(--text-xl) - 0.1rem);
-  color: #cfd8de;
-  font-weight: 400;
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin-top: 2rem;
 }
 
 .prose-research h4 {
-  font-size: var(--text-lg);
-  font-weight: 400;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 1.75rem;
 }
 
 .prose-research p {
-  margin-bottom: 1.5rem;
-  color: #A1A1A6;
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+  color: #1f1f1f;
 }
 
 .prose-research strong {
-  color: #F5F5F7;
+  color: #0d0d0d;
   font-weight: 600;
 }
 
 .prose-research code {
   font-family: var(--font-mono);
-  background-color: #161B22;
-  padding: 0.25rem 0.5rem;
+  background: #f5f5f5;
+  padding: 0.2em 0.4em;
   border-radius: 0.25rem;
-  font-size: 0.875em;
+  font-size: 0.9em;
+  color: #d73a49;
+  border: 1px solid #e1e4e8;
 }
 
 .prose-research pre {
-  background-color: #161B22;
-  padding: 1.5rem;
+  position: relative;
+  background: #f6f8fa;
+  padding: 1.25rem 1.5rem;
   border-radius: 0.5rem;
   overflow-x: auto;
   margin: 1.5rem 0;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid #e1e4e8;
+  color: #24292e;
+  font-size: 0.875rem;
+  line-height: 1.6;
 }
 
 .prose-research pre code {
@@ -145,24 +225,80 @@ body {
   padding: 0;
   font-size: 0.875rem;
   line-height: 1.6;
+  display: block;
+  font-family: var(--font-mono);
+  color: #24292e;
+  border: none;
 }
 
-.prose-research ul, .prose-research ol {
-  padding-left: 1.5rem;
-  margin-bottom: 1.5rem;
+.prose-research ul,
+.prose-research ol {
+  padding-left: 1.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .prose-research li {
-  margin-bottom: 0.75rem;
-  color: #A1A1A6;
+  margin-bottom: 0.5rem;
+  color: #1f1f1f;
+  line-height: 1.7;
 }
 
 .prose-research blockquote {
-  border-left: 4px solid #00D4FF;
-  padding-left: 1.5rem;
+  border-left: 4px solid #0969da;
+  padding-left: 1.25rem;
   margin: 1.5rem 0;
-  font-style: italic;
-  color: #A1A1A6;
+  font-style: normal;
+  color: #57606a;
+}
+
+.prose-research a {
+  color: #0969da;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.prose-research a:hover {
+  border-bottom-color: #0969da;
+}
+
+.prose-research table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.prose-research th,
+.prose-research td {
+  border: 1px solid #d0d7de;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.prose-research th {
+  background: #f6f8fa;
+  font-weight: 600;
+  color: #0d0d0d;
+}
+
+.prose-research td {
+  color: #1f1f1f;
+}
+
+.microtype {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  color: #050505;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-shadow: none;
+}
+
+.microtype--muted {
+  color: rgba(5, 5, 5, 0.6);
+  text-shadow: none;
 }
 
 /* Math display */
@@ -181,12 +317,12 @@ body {
 /* Navigation styles */
 .nav-link {
   position: relative;
-  color: #A1A1A6;
+  color: #1c243b;
   transition: color 0.2s ease;
 }
 
 .nav-link:hover {
-  color: #F5F5F7;
+  color: #4b6bff;
 }
 
 .nav-link::after {
@@ -196,7 +332,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #00D4FF;
+  background-color: #4b6bff;
   transition: width 0.2s ease;
 }
 
