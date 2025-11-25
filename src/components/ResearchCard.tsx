@@ -72,7 +72,7 @@ export default function ResearchCard({
         </div>
         <div className="flex min-w-0 flex-col items-start gap-1 text-left sm:items-end sm:text-right">
           <span className="whitespace-nowrap text-[11px] font-mono uppercase tracking-[0.35em] text-[#4b6bff]">{releaseLabel}</span>
-          <span className="mt-1 break-words text-[11px] font-mono uppercase leading-[1.3] tracking-[0.2em] text-black/50 sm:whitespace-nowrap sm:tracking-[0.25em]">{classificationLabel}</span>
+          <span className="mt-1 w-full overflow-hidden break-words text-[11px] font-mono uppercase leading-[1.3] tracking-[0.18em] text-black/50 sm:w-auto sm:whitespace-nowrap sm:tracking-[0.25em]">{classificationLabel}</span>
         </div>
       </div>
 
@@ -91,9 +91,9 @@ export default function ResearchCard({
       </div>
 
       <div className="mt-auto bg-[#f3f6ff] px-6 py-6">
-        <dl className="grid gap-6 text-[11px] font-mono uppercase tracking-[0.3em] text-black/60 sm:grid-cols-3">
+        <dl className="grid gap-8 text-[11px] font-mono uppercase tracking-[0.3em] text-black/60 sm:grid-cols-3">
           {metadata.map(({ label, value }) => (
-            <div key={label} className="flex flex-col gap-2">
+            <div key={label} className="flex flex-col gap-2.5">
               <dt>{label}</dt>
               <dd className="text-base font-light normal-case tracking-[0.02em] text-[#010409]">
                 {value}
