@@ -111,11 +111,11 @@ export default function ContactPage() {
         <aside className="space-y-6">
           <div className="rounded-xl border border-white/10 bg-white/[0.01] p-6">
             <p className="text-[10px] font-mono uppercase tracking-[0.4em] text-[#6d6d6d]">Primary Channel</p>
-            <a href="mailto:gavin.sangedha@alphavectortech.com" className="mt-4 block text-sm text-white hover:text-[#00ffff]">
-              gavin.sangedha@alphavectortech.com
+            <a href="mailto:gsangedha.desk@proton.me" className="mt-4 block text-sm text-white hover:text-[#00ffff]">
+              gsangedha.desk@proton.me
             </a>
             <div className="mt-6 text-[11px] font-mono uppercase tracking-[0.3em] text-[#7f7f7f]">
-              Signal: +61 489 218 235
+              Signal endpoint issued post-clearance
             </div>
           </div>
 

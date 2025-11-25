@@ -75,15 +75,15 @@ export default function Footer() {
               <div>
                 <p className="text-[10px] font-mono tracking-[0.25em] uppercase text-[#6c6c6c]">Primary</p>
                 <a
-                  href="mailto:gavin.sangedha@alphavectortech.com"
+                  href="mailto:gsangedha.desk@proton.me"
                   className="text-[#fafafa] hover:text-[#00ffff] transition-colors"
                 >
-                  gavin.sangedha@alphavectortech.com
+                  gsangedha.desk@proton.me
                 </a>
               </div>
               <div>
                 <p className="text-[10px] font-mono tracking-[0.25em] uppercase text-[#6c6c6c]">Signal</p>
-                <p className="font-mono">+61 489 218 235</p>
+                <p className="font-mono">Endpoint issued post-clearance</p>
               </div>
               <div>
                 <p className="text-[10px] font-mono tracking-[0.25em] uppercase text-[#6c6c6c]">Status</p>
