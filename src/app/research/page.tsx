@@ -11,7 +11,7 @@ export default function ResearchIndexPage() {
       title="Research Archive"
       description="Institutional-grade forensics spanning liability quantification, causal proof systems, and governance architectures."
     >
-      <div className="grid gap-8 lg:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
         {researchPapers.map((paper, index) => (
           <ResearchCard key={paper.href} {...paper} index={index} />
         ))}

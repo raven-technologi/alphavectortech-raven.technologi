@@ -2,7 +2,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* stylelint-enable */
 
 /* ═══════════════════════════════════════════════════════════════════════════
    LENIS SMOOTH SCROLL — Required CSS
@@ -78,22 +77,41 @@ body {
   font-size: 1.02rem;
 }
 
-.prose-research h1, 
-.prose-research h2, 
-.prose-research h3, 
-.prose-research h4, 
+.prose-research h1,
+.prose-research h2,
+.prose-research h3,
+.prose-research h4,
 .prose-research h5 {
   font-family: var(--font-primary);
-  font-weight: 600;
-  letter-spacing: var(--tracking-tight);
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
+  font-weight: 300;
+  letter-spacing: -0.015em;
+  text-transform: none;
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
 }
 
-.prose-research h1 { font-size: var(--text-3xl); }
-.prose-research h2 { font-size: var(--text-2xl); color: #00D4FF; }
-.prose-research h3 { font-size: var(--text-xl); }
-.prose-research h4 { font-size: var(--text-lg); }
+.prose-research h1 {
+  font-size: var(--text-3xl);
+  color: #f7fafa;
+}
+
+.prose-research h2 {
+  font-size: calc(var(--text-2xl) - 0.2rem);
+  color: #e0f7ff;
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+.prose-research h3 {
+  font-size: calc(var(--text-xl) - 0.1rem);
+  color: #cfd8de;
+  font-weight: 400;
+}
+
+.prose-research h4 {
+  font-size: var(--text-lg);
+  font-weight: 400;
+}
 
 .prose-research p {
   margin-bottom: 1.5rem;
