@@ -35,7 +35,7 @@ export const researchPapers = [
     abstract: "A definitive legal-technical doctrine establishing standards for attributing corporate liability when automated systems cause harm. Corporations deploying algorithmic systems now face unprecedented legal exposure following a convergence of three critical developments: Delaware courts have extended Caremark oversight duties to mission-critical automated systems, federal regulators have secured record enforcement actions exceeding $8 billion in 2024, and technical standards now enable mathematically rigorous causal attribution of algorithmic failures to specific governance breakdowns.",
     wordCount: "~5,500 words",
     href: "/research/sangedha-framework",
-    color: "#ffaa00",
+  color: "#ff4dd6",
     release: "Q4 2025",
     classification: "Causal Governance Protocol // Class-G",
     methodologyStamp: "AVT-SNG/03",

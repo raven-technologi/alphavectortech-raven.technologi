@@ -18,10 +18,10 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="group">
             <div className="flex flex-col">
-              <span className="text-[10px] font-mono tracking-[0.45em] text-[#7c7c7c] uppercase group-hover:text-[#00ffff] transition-colors">
+              <span className="text-[10px] font-mono tracking-[0.45em] text-[#d2fdff] uppercase group-hover:text-[#00ffff] transition-colors">
                 Alpha Vector Technologies
               </span>
-              <span className="mt-2 text-[10px] font-mono tracking-[0.3em] text-[#3f3f3f]">
+              <span className="mt-2 text-[10px] font-mono tracking-[0.3em] text-[#a5f6ff]">
                 ABN 50 353 196 500
               </span>
             </div>
@@ -32,7 +32,7 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-[11px] font-mono uppercase tracking-[0.3em] text-[#6f6f6f] hover:text-[#fafafa] transition-colors"
+                className="text-[11px] font-mono uppercase tracking-[0.3em] text-[#e7fefe] hover:text-[#00ffff] transition-colors"
               >
                 {item.label}
               </Link>
@@ -72,7 +72,7 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-[11px] font-mono uppercase tracking-[0.4em] text-[#9b9b9b]"
+                className="text-[11px] font-mono uppercase tracking-[0.4em] text-[#d2fdff]"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}

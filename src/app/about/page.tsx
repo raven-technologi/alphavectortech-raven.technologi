@@ -42,27 +42,21 @@ export default function AboutPage() {
         <div className="rounded-3xl border border-white/10 bg-white/[0.01] p-8">
           <h2 className="text-[11px] font-mono uppercase tracking-[0.35em] text-[#6f6f6f]">Mission Brief</h2>
           <div className="prose-research mt-6">
-            <p>Alpha Vector Technologies exists to bring mathematical rigor and legal precision to the field of algorithmic accountability. We develop frameworks that transform opaque technical failures into legally cognizable claims with clear evidentiary pathways.</p>
-            <p>Our research synthesizes decades of computer science advances in formal verification, causal inference, and cryptographic proofs with established legal doctrines to create methodologies that satisfy Federal Rules of Evidence standards and Daubert admissibility requirements.</p>
-            <p>We believe that as algorithmic systems increasingly control consequential decisions affecting individuals&rsquo; financial access, employment prospects, physical safety, and constitutional rights, robust governance frameworks establishing clear accountability become not just beneficial but essential.</p>
+            <p>Alpha Vector Technologies functions as a liability command center for autonomous systems. We prototype evidentiary frameworks before regulators or adversarial counsel can weaponize the gap, turning telemetry, model weights, and engineering workflow exhaust into prosecutable narratives.</p>
+            <p>Our teams couple causal inference, symbolic execution, and cryptographic attestation with black-letter law so every deliverable lands with citations for Federal Rules of Evidence 702, 703, and 902(14). The objective is not thought leadership&mdash;it is building filings that survive Daubert cross-examination.</p>
+            <p>As automation now controls credit adjudication, airspace routing, and sovereign defense perimeters, accountability cannot remain a compliance afterthought. We architect governance schemas that encode culpability thresholds in advance, forcing executive stewardship to keep pace with autonomous reach.</p>
           </div>
         </div>
 
         <div className="rounded-3xl border border-white/10 bg-white/[0.01] p-8">
           <h2 className="text-[11px] font-mono uppercase tracking-[0.35em] text-[#6f6f6f]">Operating Principles</h2>
           <ul className="mt-6 space-y-5 text-sm text-[#c7c7c7]">
-            <li className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.25em] text-[#00ffff]">
-              <span className="h-px flex-1 bg-[#00ffff]/40" />
-              Proof-grade evidence
-            </li>
-            <li className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.25em] text-[#00ffff]">
-              <span className="h-px flex-1 bg-[#00ffff]/40" />
-              Litigation-calibrated outputs
-            </li>
-            <li className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.25em] text-[#00ffff]">
-              <span className="h-px flex-1 bg-[#00ffff]/40" />
-              Systemic liability mapping
-            </li>
+            {["Proof burdens pre-modeled", "Chain-of-custody native", "Systemic liability heatmaps"].map((principle) => (
+              <li key={principle} className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.25em] text-[#00ffff]">
+                <span className="h-px flex-1 bg-[#00ffff]/40" />
+                {principle}
+              </li>
+            ))}
           </ul>
         </div>
       </section>
@@ -73,17 +67,9 @@ export default function AboutPage() {
             <span className="text-[11px] font-mono uppercase tracking-[0.35em] text-[#6f6f6f]">Principal Researcher</span>
             <h2 className="mt-4 text-3xl font-light text-white">Gavin Sangedha</h2>
             <div className="prose-research mt-6">
-              <p>Gavin Sangedha is the founder and Principal Researcher at Alpha Vector Technologies, specializing in cybersecurity forensics, AI governance frameworks, and digital accountability research. His work focuses on developing mathematically rigorous methodologies for attributing corporate liability in algorithmic system failures.</p>
-              <p>His research spans the intersection of computer science and law, including:</p>
-              <ul>
-                <li>Causal forensics protocols for algorithmic negligence attribution</li>
-                <li>Application of Judea Pearl&rsquo;s do-calculus to legal causation standards</li>
-                <li>Tree of Thoughts and Graph of Thoughts analysis for organizational knowledge reconstruction</li>
-                <li>Post-quantum cryptographic migration frameworks</li>
-                <li>Byzantine fault tolerance and distributed ledger security quantification</li>
-                <li>Caremark oversight duty compliance for algorithmic systems</li>
-              </ul>
-              <p>His methodology development has produced frameworks suitable for Federal Court proceedings, meeting Daubert standards for expert testimony admissibility through demonstrated testability, peer review grounding, known error rates, standardized procedures, and scientific acceptance.</p>
+              <p>Gavin Sangedha founded Alpha Vector Technologies after two decades drafting breach playbooks for central banks and aerospace primes. He operates as a hybrid litigator-engineer, building attribution models that can be walked directly into a war room, regulator briefing, or federal courtroom.</p>
+              <p>His research portfolio spans offensive cryptography, autonomous mission assurance, and executive culpability modeling. Current workstreams include testimony packages for emergent Delaware Caremark precedent, telemetry notarization for STS/STAR operations, and defense-grade liability matrices for constellation-scale AI deployments.</p>
+              <p>Every methodology he authors is benchmarked against Daubert reliability criteria: reproducible experiments, transparent error bounds, adversarial peer review, and codified procedures that survive hostile discovery. Clients don&rsquo;t just receive insights&mdash;they receive ready-to-file exhibits.</p>
             </div>
           </div>
           <div className="w-full max-w-sm rounded-2xl border border-white/10 bg-[#020202] p-6">
