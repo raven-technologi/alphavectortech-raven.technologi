@@ -5,6 +5,7 @@ import 'katex/dist/katex.min.css'
 import { SmoothScrollWrapper } from "@/components/SmoothScrollWrapper"
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import { AnalyticsTracker } from '@/components/AnalyticsTracker'
 
 /* ═══════════════════════════════════════════════════════════════════════════
    TYPOGRAPHY CONFIGURATION
@@ -53,6 +54,7 @@ export default function RootLayout({
         antialiased
         overflow-x-hidden
       `}>
+        <AnalyticsTracker />
         <SmoothScrollWrapper>
           {/* Background Grid */}
           <div 
