@@ -218,6 +218,19 @@ html.lenis body {
   color: #24292e;
   font-size: 0.875rem;
   line-height: 1.6;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 640px) {
+  .prose-research pre {
+    font-size: 0.75rem;
+    padding: 1rem 1.25rem;
+    margin: 1.25rem -1.5rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
 }
 
 .prose-research pre code {
@@ -229,6 +242,15 @@ html.lenis body {
   font-family: var(--font-mono);
   color: #24292e;
   border: none;
+  white-space: pre;
+  word-wrap: normal;
+  overflow-wrap: normal;
+}
+
+@media (max-width: 640px) {
+  .prose-research pre code {
+    font-size: 0.75rem;
+  }
 }
 
 .prose-research ul,

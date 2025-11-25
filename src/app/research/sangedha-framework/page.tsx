@@ -14,10 +14,10 @@ export default async function SangedhaFrameworkPage() {
 			showTagBarcode
 		>
 			<article className="rounded-3xl border border-black/10 bg-white p-6 sm:p-10">
-				<div className="flex flex-wrap gap-6 microtype text-[10px] tracking-[0.35em] text-[#010409]">
-					<span>Published: Q4 2025</span>
-					<span>Legal Engineering</span>
-					<span>Read Time: 40 min</span>
+				<div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-6 microtype text-[10px] tracking-[0.35em] text-[#010409]">
+					<span className="whitespace-nowrap">Published: Q4 2025</span>
+					<span className="whitespace-nowrap">Legal Engineering</span>
+					<span className="whitespace-nowrap">Read Time: 40 min</span>
 				</div>
 
 				<ResearchMarkdown content={content} />

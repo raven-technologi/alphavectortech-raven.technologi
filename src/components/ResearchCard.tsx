@@ -54,11 +54,11 @@ export default function ResearchCard({
         aria-hidden
       />
 
-      <div className="flex flex-wrap items-center justify-between gap-4 px-6 pt-8">
+      <div className="flex flex-col gap-3 px-6 pt-8 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-4">
         <div className="flex items-center gap-4">
-          <div>
-            <span className="text-[10px] font-mono uppercase tracking-[0.35em] text-black/60">{dossierNumber}</span>
-            <p className="microtype text-[11px] tracking-[0.4em] text-black">{methodologyLabel}</p>
+          <div className="flex flex-col gap-1">
+            <span className="whitespace-nowrap text-[10px] font-mono uppercase tracking-[0.35em] text-black/60">{dossierNumber}</span>
+            <p className="microtype whitespace-nowrap text-[11px] tracking-[0.4em] text-black">{methodologyLabel}</p>
           </div>
           <div className="hidden h-10 items-end gap-[3px] sm:flex" aria-hidden>
             {barcodePattern.map((height, idx) => (
@@ -70,9 +70,9 @@ export default function ResearchCard({
             ))}
           </div>
         </div>
-        <div className="flex flex-col items-end text-right">
-          <span className="text-[11px] font-mono uppercase tracking-[0.35em] text-[#4b6bff]">{releaseLabel}</span>
-          <span className="mt-1 text-[11px] font-mono uppercase tracking-[0.25em] text-black/50">{classificationLabel}</span>
+        <div className="flex flex-col items-start text-left sm:items-end sm:text-right">
+          <span className="whitespace-nowrap text-[11px] font-mono uppercase tracking-[0.35em] text-[#4b6bff]">{releaseLabel}</span>
+          <span className="mt-1 whitespace-nowrap text-[11px] font-mono uppercase tracking-[0.25em] text-black/50">{classificationLabel}</span>
         </div>
       </div>
 
