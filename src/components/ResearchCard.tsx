@@ -70,9 +70,9 @@ export default function ResearchCard({
             ))}
           </div>
         </div>
-        <div className="flex flex-col items-start gap-1 text-left sm:items-end sm:text-right sm:max-w-[280px]">
+        <div className="flex min-w-0 flex-col items-start gap-1 text-left sm:items-end sm:text-right">
           <span className="whitespace-nowrap text-[11px] font-mono uppercase tracking-[0.35em] text-[#4b6bff]">{releaseLabel}</span>
-          <span className="mt-1 max-w-full text-[11px] font-mono uppercase leading-tight tracking-[0.25em] text-black/50 sm:whitespace-nowrap">{classificationLabel}</span>
+          <span className="mt-1 break-words text-[11px] font-mono uppercase leading-[1.3] tracking-[0.2em] text-black/50 sm:whitespace-nowrap sm:tracking-[0.25em]">{classificationLabel}</span>
         </div>
       </div>
 
