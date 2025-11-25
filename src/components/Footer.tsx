@@ -83,7 +83,7 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-[10px] font-mono tracking-[0.25em] uppercase text-[#010409]">Signal</p>
-                <p className="font-mono text-[#010409]">Endpoint issued post-clearance</p>
+                <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#010409]">Endpoint issued post-clearance</p>
               </div>
               <div>
                 <p className="text-[10px] font-mono tracking-[0.25em] uppercase text-[#010409]">Status</p>
