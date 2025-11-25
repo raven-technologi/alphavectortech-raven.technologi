@@ -54,8 +54,8 @@ export default function ResearchCard({
         aria-hidden
       />
 
-      <div className="flex flex-col gap-3 px-6 pt-8 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-4">
-        <div className="flex items-center gap-4">
+      <div className="flex flex-col gap-3 px-6 pt-8 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+        <div className="flex items-center gap-4 sm:flex-1">
           <div className="flex flex-col gap-1">
             <span className="whitespace-nowrap text-[10px] font-mono uppercase tracking-[0.35em] text-black/60">{dossierNumber}</span>
             <p className="microtype whitespace-nowrap text-[11px] tracking-[0.4em] text-black">{methodologyLabel}</p>
@@ -70,9 +70,9 @@ export default function ResearchCard({
             ))}
           </div>
         </div>
-        <div className="flex min-w-0 flex-col items-start gap-1 text-left sm:items-end sm:text-right">
+        <div className="flex flex-col items-start gap-1 text-left sm:max-w-[50%] sm:items-end sm:text-right">
           <span className="whitespace-nowrap text-[11px] font-mono uppercase tracking-[0.35em] text-[#4b6bff]">{releaseLabel}</span>
-          <span className="mt-1 w-full overflow-hidden break-words text-[11px] font-mono uppercase leading-[1.3] tracking-[0.18em] text-black/50 sm:w-auto sm:whitespace-nowrap sm:tracking-[0.25em]">{classificationLabel}</span>
+          <span className="text-[11px] font-mono uppercase leading-[1.4] tracking-[0.15em] text-black/50 sm:tracking-[0.2em]">{classificationLabel}</span>
         </div>
       </div>
 
