@@ -167,7 +167,7 @@ User saved partial Claude outputs in: `C:\Gav_War_Room\claude_unfinished_files\`
 - **Principal Researcher**: Gavin Sangedha
 - **Domain**: alphavectortech.com
 - **Email**: gavin.sangedha@alphavectortech.com
-- **Location**: South Australia
+- **Location**: Global Operations
 
 ---
 

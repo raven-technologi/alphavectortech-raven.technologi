@@ -1,37 +1,23 @@
-'use client';
-import Navigation from '../../../components/Navigation';
-import Footer from '../../../components/Footer';
-import RelatedResearch from '../../../components/RelatedResearch';
-import Link from 'next/link';
+"use client";
+
+import PageFrame from '@/components/PageFrame';
+import RelatedResearch from '@/components/RelatedResearch';
 
 export default function ByzantineCalculusPage() {
   return (
-    <div className="min-h-screen bg-surface-base">
-      <Navigation />
-      
-      <article className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          {/* Breadcrumb */}
-          <div className="flex items-center space-x-2 text-sm mb-8">
-            <Link href="/" className="text-text-tertiary hover:text-accent transition-colors">Home</Link>
-            <span className="text-text-tertiary">/</span>
-            <span className="text-accent">Research</span>
-          </div>
+    <PageFrame
+      tag="RESEARCH // 02"
+      title="The Byzantine Calculus"
+      description="Quantifying distributed ledger security as financial risk with fiduciary-grade metrics."
+    >
+      <article className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 sm:p-10">
+        <div className="flex flex-wrap gap-6 text-[10px] font-mono uppercase tracking-[0.35em] text-[#7a7a7a]">
+          <span>Published: March 15, 2025</span>
+          <span>Cryptoeconomics</span>
+          <span>Read Time: 35 min</span>
+        </div>
 
-          {/* Paper Header */}
-          <header className="mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
-              The Byzantine Calculus
-            </h1>
-            <div className="flex flex-wrap gap-4 text-sm text-text-tertiary mb-8">
-              <span className="bg-surface-elevated px-3 py-1 rounded-full">Published: March 15, 2025</span>
-              <span className="bg-surface-elevated px-3 py-1 rounded-full">Category: Cryptoeconomics</span>
-              <span className="bg-surface-elevated px-3 py-1 rounded-full">Read Time: 35 min</span>
-            </div>
-          </header>
-
-          {/* Paper Content */}
-          <div className="prose-research">
+        <div className="prose-research mt-10">
             
             <h2>Quantifying Distributed Ledger Security as Enterprise Financial Risk</h2>
 
@@ -184,12 +170,10 @@ export default function ByzantineCalculusPage() {
             <p>Enterprise risk management integration combines COSO governance framework with ISO 31000 operational risk management and DLT-specific Key Risk Indicators deployed across three tiers: Tier 1 daily monitoring (node availability, transaction latency, failed transaction rate, security events), Tier 2 weekly monitoring (validator concentration, staking ratio trends, TVL/security ratio, smart contract audit status), and Tier 3 monthly monitoring (governance participation, protocol upgrade success rate, community sentiment, regulatory compliance scores). Alert thresholds calibrate green/amber/red status with amber triggering at 80% of critical threshold enabling proactive intervention before breach.</p>
 
             <p>Financial risk quantification through Value-at-Risk and Conditional Value-at-Risk adapted for cryptocurrency volatility requires adaptive weighting methods accounting for distribution fat tails, 95-99% confidence intervals with daily-to-weekly horizons, monthly backtesting validation with Christoffersen and Berkowitz Likelihood Ratio tests, and capital allocation following Required_Capital = max(VaR_99% × 3, Stressed_Scenario_Loss, Regulatory_Minimum). Stress testing encompasses performance targets (Target_TPS = Peak_Load × Safety_Factor), consensus resilience (Byzantine node injection 0-33%, network partition scenarios, fork probability measurement), and economic attack simulation (51% attack cost quantification, flash loan vulnerability assessment, bridge exploit propagation modeling). The Byzantine Calculus framework transforms algorithmic abstractions into quantifiable financial metrics enabling boards to fulfill Caremark oversight duties through mathematical rigor rather than generic assurances.</p>
-          </div>
         </div>
       </article>
-      
+
       <RelatedResearch currentPath="/research/byzantine-calculus" />
-      <Footer />
-    </div>
+    </PageFrame>
   );
 }

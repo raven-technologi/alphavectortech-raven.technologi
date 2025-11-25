@@ -1,40 +1,27 @@
-'use client';
-import Navigation from '../../../components/Navigation';
-import Footer from '../../../components/Footer';
-import RelatedResearch from '../../../components/RelatedResearch';
-import Link from 'next/link';
+"use client";
+
+import PageFrame from '@/components/PageFrame';
+import RelatedResearch from '@/components/RelatedResearch';
 
 export default function SangedhaFrameworkPage() {
   return (
-    <div className="min-h-screen bg-surface-base">
-      <Navigation />
-      
-      <article className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          {/* Breadcrumb */}
-          <div className="flex items-center space-x-2 text-sm mb-8">
-            <Link href="/" className="text-text-tertiary hover:text-accent transition-colors">Home</Link>
-            <span className="text-text-tertiary">/</span>
-            <span className="text-accent">Research</span>
-          </div>
+    <PageFrame
+      tag="RESEARCH // 03"
+      title="The Sangedha Framework"
+      description="A causal forensics protocol for attributing algorithmic negligence with courtroom-ready rigor."
+    >
+      <article className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 sm:p-10">
+        <div className="flex flex-wrap gap-6 text-[10px] font-mono uppercase tracking-[0.35em] text-[#7a7a7a]">
+          <span>Published: March 15, 2025</span>
+          <span>Legal Engineering</span>
+          <span>Read Time: 40 min</span>
+        </div>
 
-          {/* Paper Header */}
-          <header className="mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
-              The Sangedha Framework
-            </h1>
-            <p className="text-xl text-accent mb-6">
-              A Causal Forensics Protocol for Algorithmic Negligence Attribution
-            </p>
-            <div className="flex flex-wrap gap-4 text-sm text-text-tertiary mb-8">
-              <span className="bg-surface-elevated px-3 py-1 rounded-full">Published: March 15, 2025</span>
-              <span className="bg-surface-elevated px-3 py-1 rounded-full">Category: Legal Engineering</span>
-              <span className="bg-surface-elevated px-3 py-1 rounded-full">Read Time: 40 min</span>
-            </div>
-          </header>
+        <p className="mt-6 text-sm uppercase tracking-[0.4em] text-[#00ffff]">
+          A Causal Forensics Protocol for Algorithmic Negligence Attribution
+        </p>
 
-          {/* Paper Content */}
-          <div className="prose-research">
+        <div className="prose-research mt-8">
             
             <h2>A definitive legal-technical doctrine establishing standards for attributing corporate liability when automated systems cause harm</h2>
 
@@ -145,12 +132,10 @@ export default function SangedhaFrameworkPage() {
             <p><strong>Technical teams must adopt forensic-grade development practices treating all systems as potentially subject to legal scrutiny.</strong> This shifts software development from optimizing purely for performance and features toward prioritizing auditability, explainability, and verifiability. Concretely, this means: implementing eBPF-based observability from initial deployment rather than adding it post-incident, structuring all logs as Merkle trees with cryptographic integrity guarantees, requiring GPG-signed Git commits with detailed messages explaining changes, conducting formal verification for safety-critical components with documented proof attempts, maintaining comprehensive test suites with coverage metrics and documented test case selection rationale, and performing regular bias audits using statistical methods with published methodologies. Technical teams must recognize that &quot;it works in testing&quot; provides insufficient governance—they must prove properties hold through verification or document why verification is infeasible.</p>
 
             <p><strong>Executive teams must establish governance structures explicitly allocating algorithmic oversight responsibilities.</strong> The board must create a dedicated Technology Risk Committee (or expand existing Risk Committee mandates) with: at least one director with computer science or AI expertise, quarterly meetings reviewing algorithmic incident reports and verification results, direct access to technical teams without management filtering, authority to retain independent technical auditors, and explicit charter covering algorithmic systems performing mission-critical functions. The CEO must designate a Chief AI Officer or Chief Algorithm Officer at C-suite level with: authority to halt deployments failing verification requirements, responsibility for enterprise-wide algorithmic governance policy, budget for verification tools and external audits, and direct reporting line to board Technology Risk Committee. The CFO must ensure internal controls under SOX 404 explicitly cover algorithmic systems affecting financial reporting, with documented testing procedures and control deficiency escalation paths.</p>
-          </div>
         </div>
       </article>
-      
+
       <RelatedResearch currentPath="/research/sangedha-framework" />
-      <Footer />
-    </div>
+    </PageFrame>
   );
 }

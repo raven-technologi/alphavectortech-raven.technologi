@@ -1,5 +1,26 @@
 import type { Metadata } from 'next'
+import { Inter_Tight, JetBrains_Mono } from "next/font/google"
 import './globals.css'
+import { SmoothScrollWrapper } from "@/components/SmoothScrollWrapper"
+import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TYPOGRAPHY CONFIGURATION
+═══════════════════════════════════════════════════════════════════════════ */
+const interTight = Inter_Tight({
+  subsets: ["latin"],
+  variable: "--font-inter-tight",
+  display: "swap",
+  weight: ["200", "300", "400", "500", "600", "700"],
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+  weight: ["300", "400", "500"],
+})
 
 export const metadata: Metadata = {
   title: 'Alpha Vector Technologies | Institutional Security Research',
@@ -20,14 +41,59 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-      </head>
-      <body className="min-h-screen bg-surface-base">
-        {children}
+    <html lang="en" className="dark">
+      <body className={`
+        ${interTight.variable} 
+        ${jetbrainsMono.variable} 
+        min-h-screen 
+        bg-[#050505] 
+        font-sans 
+        text-[#fafafa] 
+        antialiased
+        overflow-x-hidden
+      `}>
+        <SmoothScrollWrapper>
+          {/* Background Grid */}
+          <div 
+            className="fixed inset-0 z-0 pointer-events-none opacity-[0.03]"
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(255,255,255,0.5) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.5) 1px, transparent 1px)
+              `,
+              backgroundSize: "40px 40px",
+              maskImage: "radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 70%)",
+            }}
+            aria-hidden="true"
+          />
+
+          {/* Navigation */}
+          <Navigation />
+
+          {/* Main Content */}
+          <main className="relative z-10">
+            {children}
+          </main>
+
+          {/* Footer */}
+          <Footer />
+
+          {/* Footer Coordinates */}
+          <div 
+            className="fixed bottom-0 left-0 right-0 z-40 pointer-events-none"
+            aria-hidden="true"
+          >
+            <div className="flex justify-between items-end px-8 py-6">
+              <div className="text-[9px] font-mono tracking-[0.2em] text-[#404040] uppercase">
+                <span>LAT -34.9285°</span>
+                <span className="ml-4">LONG 138.6007°</span>
+              </div>
+              <div className="text-[9px] font-mono tracking-[0.2em] text-[#404040] uppercase">
+                <span>SYS:OPERATIONAL</span>
+              </div>
+            </div>
+          </div>
+        </SmoothScrollWrapper>
       </body>
     </html>
   )

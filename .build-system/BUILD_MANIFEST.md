@@ -8,7 +8,7 @@
 - **Domain:** alphavectortech.com
 - **ABN:** 50 353 196 500
 - **Principal:** Gavin Sangedha
-- **Location:** South Australia
+- **Location:** Global Operations
 
 ---
 

@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ALPHA VECTOR TECHNOLOGIES — VOID/TERMINAL DESIGN SYSTEM
+   
+   Stack: Tailwind CSS 4 + Lenis + GSAP ScrollTrigger
+   Aesthetic: Institutional Avant-Garde / Bloomberg Terminal / Mantis.works
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   LENIS SMOOTH SCROLL — Required CSS
+───────────────────────────────────────────────────────────────────────── */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   TAILWIND v4 THEME CONFIGURATION
+───────────────────────────────────────────────────────────────────────── */
+@theme {
+  /* Typography */
+  --font-sans: var(--font-inter-tight), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "SF Mono", "Fira Code", monospace;
+
+  /* Void Palette */
+  --color-void-1000: #010101;
+  --color-void-950: #030303;
+  --color-void-900: #050505;
+  --color-void-850: #080808;
+  --color-void-800: #0a0a0a;
+  --color-void-700: #0f0f0f;
+  --color-void-600: #141414;
+  --color-void-500: #1a1a1a;
+  --color-void-400: #262626;
+  --color-void-300: #333333;
+  --color-void-200: #404040;
+  --color-void-100: #525252;
+
+  /* Signal Accents */
+  --color-signal-cyan: #00ffff;
+  --color-signal-cyan-muted: #00d4d4;
+  --color-signal-cyan-dim: #007a7a;
+  --color-signal-lime: #00ff88;
+  --color-signal-amber: #ffaa00;
+  --color-signal-red: #ff3333;
+  --color-signal-white: #fafafa;
+
+  /* Semantic */
+  --color-background: var(--color-void-900);
+  --color-foreground: var(--color-signal-white);
+  --color-muted: #6b6b6b;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.16);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BASE STYLES
+───────────────────────────────────────────────────────────────────────── */
+@layer base {
+  :root {
+    --background: #050505;
+    --foreground: #fafafa;
+    color-scheme: dark;
+  }
+
+  *,
+  *::before,
+  *::after {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: var(--color-signal-cyan);
+    color: var(--color-void-900);
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-void-900);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-void-400);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-signal-cyan-dim);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   UTILITY CLASSES
+───────────────────────────────────────────────────────────────────────── */
+@layer utilities {
+  /* Typography Utilities */
+  .text-mono-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .text-mono-data {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+
+  /* Grid Background */
+  .grid-void {
+    background-image: 
+      linear-gradient(to right, var(--color-border) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* HUD Panel */
+  .hud-panel {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--color-border);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  /* Signal Pulse */
+  .signal-pulse {
+    width: 6px;
+    height: 6px;
+    background: var(--color-signal-cyan);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { 
+      opacity: 1;
+      box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.4);
+    }
+    50% { 
+      opacity: 0.6;
+      box-shadow: 0 0 0 8px rgba(0, 255, 255, 0);
+    }
+  }
+
+  /* Signal Line */
+  .signal-line {
+    height: 1px;
+    background: linear-gradient(90deg, var(--color-signal-cyan) 0%, transparent 100%);
+  }
+
+  /* Corner Brackets */
+  .hud-bracket {
+    position: relative;
+  }
+
+  .hud-bracket::before,
+  .hud-bracket::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--color-signal-cyan-dim);
+  }
+
+  .hud-bracket::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .hud-bracket::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+  }
+
+  /* Hover Effects */
+  .hover-signal {
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .hover-signal:hover {
+    color: var(--color-signal-cyan);
+    border-color: var(--color-signal-cyan);
+  }
+}
+
+@tailwind utilities;

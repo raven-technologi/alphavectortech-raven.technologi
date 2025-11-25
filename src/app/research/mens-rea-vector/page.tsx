@@ -1,37 +1,27 @@
-'use client';
-import Navigation from '../../../components/Navigation';
-import Footer from '../../../components/Footer';
-import RelatedResearch from '../../../components/RelatedResearch';
-import Link from 'next/link';
+"use client";
+
+import PageFrame from '@/components/PageFrame';
+import RelatedResearch from '@/components/RelatedResearch';
 
 export default function MensReaVectorPage() {
-  return (
-    <div className="min-h-screen bg-surface-base">
-      <Navigation />
-      
-      <article className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          {/* Breadcrumb */}
-          <div className="flex items-center space-x-2 text-sm mb-8">
-            <Link href="/" className="text-text-tertiary hover:text-accent transition-colors">Home</Link>
-            <span className="text-text-tertiary">/</span>
-            <span className="text-accent">Research</span>
-          </div>
+    return (
+        <PageFrame
+            tag="RESEARCH // 01"
+            title="The Mens Rea Vector"
+            description="Mathematically reconstruct executive scienter from organizational exhaust to end plausible deniability."
+        >
+            <article className="rounded-3xl border border-white/10 bg-white/[0.02] p-6 sm:p-10">
+                <div className="flex flex-wrap gap-6 text-[10px] font-mono uppercase tracking-[0.35em] text-[#7a7a7a]">
+                    <span>Published: March 15, 2025</span>
+                    <span>Computational Law</span>
+                    <span>Read Time: 25 min</span>
+                </div>
 
-          {/* Paper Header */}
-          <header className="mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
-              The Mens Rea Vector
-            </h1>
-            <div className="flex flex-wrap gap-4 text-sm text-text-tertiary mb-8">
-              <span className="bg-surface-elevated px-3 py-1 rounded-full">Published: March 15, 2025</span>
-              <span className="bg-surface-elevated px-3 py-1 rounded-full">Category: Computational Law</span>
-              <span className="bg-surface-elevated px-3 py-1 rounded-full">Read Time: 25 min</span>
-            </div>
-          </header>
+                <header className="mt-8 mb-12">
+                    <h1 className="text-4xl md:text-5xl font-light text-white">The Mens Rea Vector</h1>
+                </header>
 
-          {/* Paper Content */}
-          <div className="prose-research">
+                <div className="prose-research">
             
             <h2>Executive Summary: The End of Plausible Deniability in Corporate Software Failures</h2>
             
@@ -1080,12 +1070,10 @@ BreachOccurred = f₄(VulnExploited)`}</code>
               <li>Establish alert response protocols</li>
               <li>Conduct tabletop exercises for high-scienter scenarios</li>
             </ul>
-          </div>
-        </div>
-      </article>
-      
-      <RelatedResearch currentPath="/research/mens-rea-vector" />
-      <Footer />
-    </div>
-  );
+                    </div>
+                </article>
+
+            <RelatedResearch currentPath="/research/mens-rea-vector" />
+        </PageFrame>
+    );
 }

@@ -1,8 +1,7 @@
-'use client';
-import Navigation from '../../components/Navigation';
-import Footer from '../../components/Footer';
-import Link from 'next/link';
-import { useState } from 'react';
+'use client'
+
+import { useState } from 'react'
+import PageFrame from '@/components/PageFrame'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -10,200 +9,142 @@ export default function ContactPage() {
     email: '',
     organization: '',
     inquiryType: '',
-    message: ''
-  });
+    message: '',
+  })
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Form submission would be handled here
-    alert('Thank you for your inquiry. We will respond within 2-3 business days.');
-  };
+    e.preventDefault()
+    alert('Thank you for your inquiry. We will respond within 2-3 business days.')
+  }
 
   return (
-    <div className="min-h-screen bg-surface-base">
-      <Navigation />
-      
-      <main className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          {/* Breadcrumb */}
-          <div className="flex items-center space-x-2 text-sm mb-8">
-            <Link href="/" className="text-text-tertiary hover:text-accent transition-colors">Home</Link>
-            <span className="text-text-tertiary">/</span>
-            <span className="text-accent">Contact</span>
+    <PageFrame
+      tag="DOSSIER // 02"
+      title="Secure Contact Procedures"
+      description="Use this channel for institutional engagements, litigation support, or research coordination. Signal and PGP endpoints provision on validation."
+    >
+      <div className="grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+        <form onSubmit={handleSubmit} className="rounded-xl border border-white/10 bg-white/[0.02] p-8 space-y-8">
+          <div className="grid gap-6 md:grid-cols-2">
+            {[{
+              id: 'name',
+              label: 'Full Name *',
+              type: 'text',
+              placeholder: 'Executive / Counsel / Research Lead'
+            }, {
+              id: 'email',
+              label: 'Email *',
+              type: 'email',
+              placeholder: 'name@institution.tld'
+            }].map(({ id, label, type, placeholder }) => (
+              <label key={id} className="space-y-2 text-xs font-medium tracking-[0.25em] text-white/70 uppercase">
+                {label}
+                <input
+                  id={id}
+                  type={type}
+                  required
+                  placeholder={placeholder}
+                  value={(formData as any)[id]}
+                  onChange={(e) => setFormData({ ...formData, [id]: e.target.value })}
+                  className="w-full rounded-lg border border-white/15 bg-transparent px-4 py-3 font-light text-white placeholder:text-white/30 focus:border-[#00ffff] focus:outline-none transition-colors"
+                />
+              </label>
+            ))}
           </div>
 
-          {/* Header */}
-          <header className="mb-16">
-            <h1 className="text-4xl sm:text-5xl font-bold text-text-primary leading-tight mb-6">
-              Professional Inquiry
-            </h1>
-            <p className="text-xl text-text-secondary">
-              For research collaboration, expert consultation, or institutional inquiries
+          <label className="space-y-2 text-xs font-medium tracking-[0.25em] text-white/70 uppercase">
+            Organization
+            <input
+              type="text"
+              placeholder="Company / Fund / Agency"
+              value={formData.organization}
+              onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
+              className="w-full rounded-lg border border-white/15 bg-transparent px-4 py-3 font-light text-white placeholder:text-white/30 focus:border-[#00ffff] focus:outline-none transition-colors"
+            />
+          </label>
+
+          <label className="space-y-2 text-xs font-medium tracking-[0.25em] text-white/70 uppercase">
+            Inquiry Type *
+            <select
+              required
+              value={formData.inquiryType}
+              onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
+              className="w-full rounded-lg border border-white/15 bg-[#050505] px-4 py-3 text-white focus:border-[#00ffff] focus:outline-none transition-colors"
+            >
+              <option value="" className="bg-[#050505] text-black">Select classification</option>
+              <option value="research" className="bg-[#050505] text-black">Research Collaboration</option>
+              <option value="expert" className="bg-[#050505] text-black">Expert Consultation</option>
+              <option value="legal" className="bg-[#050505] text-black">Litigation / Expert Witness</option>
+              <option value="media" className="bg-[#050505] text-black">Media / Briefing</option>
+              <option value="other" className="bg-[#050505] text-black">Other</option>
+            </select>
+          </label>
+
+          <label className="space-y-2 text-xs font-medium tracking-[0.25em] text-white/70 uppercase">
+            Communication
+            <textarea
+              required
+              rows={6}
+              placeholder="Summarize objectives, timelines, and required evidence standards."
+              value={formData.message}
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+              className="w-full rounded-lg border border-white/15 bg-transparent px-4 py-3 font-light text-white placeholder:text-white/30 focus:border-[#00ffff] focus:outline-none transition-colors"
+            />
+          </label>
+
+          <button
+            type="submit"
+            className="flex w-full items-center justify-center gap-3 rounded-lg border border-[#00ffff]/40 bg-[#00ffff]/10 px-8 py-4 text-[10px] font-mono uppercase tracking-[0.35em] text-[#00ffff] hover:bg-[#00ffff]/20"
+          >
+            Transmit dossier
+          </button>
+
+          <div className="flex flex-wrap items-center gap-4 border-t border-white/10 pt-4 text-[10px] font-mono uppercase tracking-[0.3em] text-[#c0f9ff]">
+            <span>Alpha Vector Tech</span>
+            <span className="text-white/40">/</span>
+            <span>Gavin Sangedha</span>
+            <span className="text-white/40">/</span>
+            <span>ABN 50 353 196 500</span>
+          </div>
+        </form>
+
+        <aside className="space-y-6">
+          <div className="rounded-xl border border-white/10 bg-white/[0.01] p-6">
+            <p className="text-[10px] font-mono uppercase tracking-[0.4em] text-[#6d6d6d]">Primary Channel</p>
+            <a href="mailto:gavin.sangedha@alphavectortech.com" className="mt-4 block text-sm text-white hover:text-[#00ffff]">
+              gavin.sangedha@alphavectortech.com
+            </a>
+            <div className="mt-6 text-[11px] font-mono uppercase tracking-[0.3em] text-[#7f7f7f]">
+              Signal: +61 489 218 235
+            </div>
+          </div>
+
+          <div className="space-y-3 border-l border-white/15 pl-6">
+            <p className="text-[9px] font-mono uppercase tracking-[0.4em] text-[#6d6d6d]">Response SLA</p>
+            <ul className="space-y-2 text-sm text-[#c5c5c5]">
+              <li>General programs: 2–3 business days</li>
+              <li>Litigation or regulatory: 24–48 hours</li>
+              <li>Media briefings: same day when feasible</li>
+            </ul>
+          </div>
+
+          <div className="rounded-xl border border-[#00d7ff]/40 bg-[#00d7ff]/5 p-6">
+            <p className="text-[10px] font-mono uppercase tracking-[0.4em] text-[#00eaff]">Legal Notice</p>
+            <p className="mt-4 text-sm text-[#c7f8ff]">
+              Active matters may route through counsel. Reference docket numbers where applicable.
             </p>
-          </header>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Contact Form */}
-            <div className="lg:col-span-2">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-text-primary mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      required
-                      className="w-full px-4 py-3 bg-surface-elevated border border-border-subtle rounded-lg text-text-primary placeholder-text-tertiary focus:outline-none focus:border-accent transition-colors"
-                      placeholder="Your name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-text-primary mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      required
-                      className="w-full px-4 py-3 bg-surface-elevated border border-border-subtle rounded-lg text-text-primary placeholder-text-tertiary focus:outline-none focus:border-accent transition-colors"
-                      placeholder="your@email.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="organization" className="block text-sm font-medium text-text-primary mb-2">
-                    Organization
-                  </label>
-                  <input
-                    type="text"
-                    id="organization"
-                    className="w-full px-4 py-3 bg-surface-elevated border border-border-subtle rounded-lg text-text-primary placeholder-text-tertiary focus:outline-none focus:border-accent transition-colors"
-                    placeholder="Company or institution"
-                    value={formData.organization}
-                    onChange={(e) => setFormData({...formData, organization: e.target.value})}
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="inquiryType" className="block text-sm font-medium text-text-primary mb-2">
-                    Inquiry Type *
-                  </label>
-                  <select
-                    id="inquiryType"
-                    required
-                    className="w-full px-4 py-3 bg-surface-elevated border border-border-subtle rounded-lg text-text-primary focus:outline-none focus:border-accent transition-colors"
-                    value={formData.inquiryType}
-                    onChange={(e) => setFormData({...formData, inquiryType: e.target.value})}
-                  >
-                    <option value="">Select inquiry type</option>
-                    <option value="research">Research Collaboration</option>
-                    <option value="expert">Expert Consultation</option>
-                    <option value="legal">Legal/Litigation Support</option>
-                    <option value="media">Media Inquiry</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-text-primary mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    required
-                    rows={6}
-                    className="w-full px-4 py-3 bg-surface-elevated border border-border-subtle rounded-lg text-text-primary placeholder-text-tertiary focus:outline-none focus:border-accent transition-colors resize-none"
-                    placeholder="Please describe your inquiry in detail"
-                    value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  />
-                </div>
-
-                <button type="submit" className="btn-primary w-full sm:w-auto">
-                  Submit Inquiry
-                </button>
-              </form>
-            </div>
-
-            {/* Contact Information Sidebar */}
-            <div className="space-y-6">
-              {/* Direct Contact */}
-              <div className="bg-surface-elevated rounded-xl p-6 border border-border-subtle">
-                <h3 className="text-lg font-semibold text-text-primary mb-4">Direct Contact</h3>
-                <div className="space-y-4">
-                  <div>
-                    <p className="text-xs font-mono text-accent uppercase tracking-wide mb-1">Email</p>
-                    <a href="mailto:gavin.sangedha@alphavectortech.com" className="text-text-secondary hover:text-accent transition-colors text-sm break-all">
-                      gavin.sangedha@alphavectortech.com
-                    </a>
-                  </div>
-                  <div>
-                    <p className="text-xs font-mono text-accent uppercase tracking-wide mb-1">Location</p>
-                    <p className="text-text-secondary text-sm">South Australia, Australia</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Response Expectations */}
-              <div className="bg-surface-elevated rounded-xl p-6 border border-border-subtle">
-                <h3 className="text-lg font-semibold text-text-primary mb-4">Response Times</h3>
-                <ul className="space-y-3 text-sm text-text-secondary">
-                  <li className="flex items-start space-x-2">
-                    <svg className="w-5 h-5 text-success mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span>General inquiries: 2-3 business days</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <svg className="w-5 h-5 text-success mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span>Legal/litigation matters: 24-48 hours</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <svg className="w-5 h-5 text-success mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span>Media inquiries: Same day when possible</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Legal Notice */}
-              <div className="bg-warning/10 rounded-xl p-6 border border-warning/20">
-                <h3 className="text-lg font-semibold text-text-primary mb-4">Legal Representation Notice</h3>
-                <p className="text-sm text-text-secondary">
-                  Alpha Vector Technologies may be represented by legal counsel in ongoing matters. 
-                  Communications regarding active litigation should be directed through appropriate legal channels.
-                </p>
-              </div>
-
-              {/* Secure Communications */}
-              <div className="bg-surface-elevated rounded-xl p-6 border border-border-subtle">
-                <h3 className="text-lg font-semibold text-text-primary mb-4">Secure Communications</h3>
-                <p className="text-sm text-text-secondary mb-4">
-                  For sensitive communications, encrypted channels are available upon request.
-                </p>
-                <ul className="space-y-2 text-sm text-text-tertiary">
-                  <li>• PGP encryption available</li>
-                  <li>• Signal messaging available</li>
-                  <li>• Secure file transfer options</li>
-                </ul>
-              </div>
-            </div>
           </div>
 
-        </div>
-      </main>
-
-      <Footer />
-    </div>
-  );
+          <div className="space-y-3 border-l border-white/15 pl-6">
+            <p className="text-[9px] font-mono uppercase tracking-[0.4em] text-[#6d6d6d]">Secure Options</p>
+            <ul className="space-y-2 text-sm text-[#c7c7c7]">
+              <li>PGP + Signal key exchange</li>
+              <li>SFTP dropbox provisioning</li>
+              <li>Air-gapped evidentiary review</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </PageFrame>
+  )
 }

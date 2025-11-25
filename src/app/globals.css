@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   LENIS SMOOTH SCROLL — Required CSS
+═══════════════════════════════════════════════════════════════════════════ */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 :root {
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-serif: 'Charter', 'Crimson Pro', 'Georgia', serif;
@@ -26,7 +50,13 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto !important;
 }
 
 body {

@@ -1,167 +1,210 @@
-'use client';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
-import ResearchCard from '../components/ResearchCard';
+"use client"
 
-const researchPapers = [
-  {
-    title: "The Mens Rea Vector",
-    subtitle: "AI-Driven Epistemic Analysis for Quantifying Executive Liability",
-    abstract: "Corporate software failures can no longer shield executives behind claims of ignorance. The Mens Rea Vector establishes a mathematically rigorous forensic methodology that reconstructs organizational knowledge states from digital artifacts, proving executive culpability with prima facie certainty. By combining Judea Pearl's causal inference framework with Tree of Thoughts analysis of development artifacts and Graph of Thoughts aggregation of organizational patterns, this methodology transforms git commits, pull requests, and communications into dispositive evidence of fiduciary breach.",
-    wordCount: "~5,000 words",
-    href: "/research/mens-rea-vector"
-  },
-  {
-    title: "The Byzantine Calculus",
-    subtitle: "Quantifying Distributed Ledger Security as Enterprise Financial Risk",
-    abstract: "Distributed ledger technology security must transition from cryptographic theory to quantifiable financial metrics. North Korean state actors have stolen $6 billion since 2017, with $2 billion extracted in 2025 alone, demonstrating that theoretical Byzantine fault tolerance provides insufficient protection against sophisticated adversaries. This framework translates consensus-layer security into board-comprehensible risk metrics, establishes fiduciary duties for oversight, and quantifies systemic contagion across interconnected DLT infrastructure using mathematical models validated in traditional financial networks.",
-    wordCount: "~5,000 words",
-    href: "/research/byzantine-calculus"
-  },
-  {
-    title: "The Sangedha Framework",
-    subtitle: "A Causal Forensics Protocol for Algorithmic Negligence Attribution",
-    abstract: "A definitive legal-technical doctrine establishing standards for attributing corporate liability when automated systems cause harm. Corporations deploying algorithmic systems now face unprecedented legal exposure following a convergence of three critical developments: Delaware courts have extended Caremark oversight duties to mission-critical automated systems, federal regulators have secured record enforcement actions exceeding $8 billion in 2024, and technical standards now enable mathematically rigorous causal attribution of algorithmic failures to specific governance breakdowns.",
-    wordCount: "~5,500 words",
-    href: "/research/sangedha-framework"
-  }
-];
+import Link from "next/link"
+import { ArrowRight, FileText, ChevronDown } from "lucide-react"
+import { researchPapers } from "@/lib/research-data"
 
-export default function Home() {
+export default function LandingPage() {
+  const primaryResearchHref = researchPapers[0]?.href ?? "/research"
+
   return (
-    <div className="min-h-screen bg-surface-base">
-      <Navigation />
-      
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="h-px w-12 bg-accent"></div>
-              <span className="text-accent font-mono text-sm uppercase tracking-wide">Alpha Vector Technologies</span>
+    <div className="relative bg-[#050505] text-[#fafafa]">
+      <section className="relative min-h-screen flex flex-col justify-center px-6 sm:px-10 md:px-16 lg:px-24 py-24 overflow-hidden">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, rgba(255,255,255,0.5) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(255,255,255,0.5) 1px, transparent 1px)
+            `,
+            backgroundSize: "60px 60px",
+          }}
+          aria-hidden
+        />
+
+        <div className="relative z-10 flex flex-col gap-12 lg:flex-row">
+          <div className="hidden lg:flex flex-col items-center gap-6">
+            <div className="h-32 w-px bg-[#00ffff]/30" />
+            {["ALPHA VECTOR TECH", "GAVIN SANGEDHA", "ABN 50 353 196 500"].map((label) => (
+              <span
+                key={label}
+                className="text-[10px] font-mono uppercase tracking-[0.4em] text-[#d2fdff]"
+                style={{ writingMode: "vertical-rl", textOrientation: "upright" }}
+              >
+                {label}
+              </span>
+            ))}
+            <div className="h-32 w-px bg-[#00ffff]/30" />
+          </div>
+
+          <div className="flex-1">
+            <div className="mb-12 inline-flex flex-wrap items-center gap-3 text-[9px] font-mono tracking-[0.3em] text-[#d2fdff] uppercase">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#00ffff]" />
+              <span>ALPHA VECTOR TECH</span>
+              <span className="mx-2 text-[rgba(255,255,255,0.4)]">/</span>
+              <span>GAVIN SANGEDHA</span>
+              <span className="mx-2 text-[rgba(255,255,255,0.4)]">/</span>
+              <span>ABN 50 353 196 500</span>
             </div>
-            
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary leading-tight mb-6">
-              Institutional Security Research & <span className="gradient-text">Digital Accountability</span>
+
+            <div className="max-w-6xl space-y-10">
+            <h1 className="leading-[0.85] tracking-[-0.04em]">
+              <span className="block text-[clamp(3rem,12vw,10rem)] font-extralight text-[#fafafa]">
+                The era of
+              </span>
+              <span className="block text-[clamp(3rem,12vw,10rem)] font-extralight text-[#00ffff]">
+                plausible deniability
+              </span>
+              <span className="block text-[clamp(3rem,12vw,10rem)] font-extralight text-[#fafafa]">
+                is over.
+              </span>
             </h1>
-            
-            <p className="text-text-secondary text-lg mb-8 leading-relaxed">
-              Pioneering causal forensics methodologies for algorithmic negligence attribution. 
-              Our research establishes mathematically rigorous frameworks that transform technical 
-              failures into legally cognizable claims with courtroom-ready evidence.
+
+            <p className="max-w-3xl text-lg md:text-xl font-light text-[#9a9a9a] leading-relaxed">
+              We engineered the end of it. Alpha Vector Technologies develops
+              <span className="text-[#fafafa]"> institutional-grade forensic methodologies</span> for attributing
+              corporate liability when autonomous systems cause harm.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
-              <div className="flex items-center space-x-2 text-text-tertiary text-sm">
-                <svg className="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span>ABN: 50 353 196 500</span>
-              </div>
-              <div className="flex items-center space-x-2 text-text-tertiary text-sm">
-                <svg className="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span>Principal Researcher: Gavin Sangedha</span>
-              </div>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href={primaryResearchHref}
+                className="group relative inline-flex items-center gap-3 rounded-full border border-[#00ffff] bg-[#001b1b]/70 px-8 py-4 font-mono text-[0.85rem] uppercase tracking-[0.18em] text-[#d2fdff] transition-colors hover:text-[#050505]"
+              >
+                <span className="absolute inset-0 rounded-full bg-[#00ffff] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <span className="relative z-10 flex items-center gap-3">
+                  <FileText className="h-4 w-4" />
+                  Access Primary Research
+                </span>
+              </Link>
+
+              <Link
+                href="/research"
+                className="inline-flex items-center gap-3 rounded-full border border-white/25 px-8 py-4 font-mono text-[0.85rem] uppercase tracking-[0.18em] text-white transition-all hover:border-white/60"
+              >
+                Research Index
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <a href="#research" className="btn-primary text-center">
-                View Research Papers
-              </a>
-              <a href="/contact" className="btn-secondary text-center">
-                Professional Inquiry
-              </a>
+            <div className="mt-20 flex flex-col items-center text-[#7f7f7f]">
+              <span className="text-[9px] font-mono tracking-[0.3em] uppercase mb-2">Scroll</span>
+              <ChevronDown className="w-4 h-4" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Research Papers Section */}
-      <section id="research" className="py-20 px-4 sm:px-6 lg:px-8 bg-primary">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-4">
-              Research Publications
-            </h2>
-            <p className="text-text-secondary max-w-2xl mx-auto">
-              Comprehensive frameworks establishing legal-technical standards for corporate accountability in algorithmic systems, digital forensics, and enterprise security.
-            </p>
+      <section className="border-t border-white/10 bg-[#060606] px-6 sm:px-10 md:px-16 lg:px-24 py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="flex flex-wrap items-center justify-between gap-4 text-[9px] font-mono uppercase tracking-[0.3em] text-[#8d8d8d]">
+            <span>INTEL.ARCHIVE</span>
+            <span>PRIMARY RESEARCH PAPERS</span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="mt-12 grid gap-10">
             {researchPapers.map((paper, index) => (
-              <ResearchCard key={paper.href} {...paper} index={index} />
+              <article
+                key={paper.id}
+                className="rounded-[28px] border border-white/12 bg-[#050505] p-8 sm:p-10 shadow-[0_15px_70px_rgba(0,0,0,0.45)]"
+              >
+                <div className="flex flex-wrap items-center gap-4 text-[10px] font-mono uppercase tracking-[0.3em] text-[#d2fdff]">
+                  <span>{paper.release}</span>
+                  <span className="h-px flex-1 min-w-[60px] bg-white/15" />
+                  <span>{paper.methodologyStamp}</span>
+                  <span className="ml-auto text-[#7a7a7a]">DOSSIER {String(index + 1).padStart(2, "0")}</span>
+                </div>
+
+                <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/[0.02] px-4 py-2 text-[9px] font-mono uppercase tracking-[0.18em] text-[#9ea8a8]">
+                  <span className="inline-flex h-2 w-2 rounded-full" style={{ backgroundColor: paper.color }} />
+                  <span>{paper.classification}</span>
+                </div>
+
+                <h2 className="mt-6 text-3xl md:text-5xl font-light" style={{ color: paper.color }}>
+                  {paper.title}
+                </h2>
+                <p className="mt-4 text-lg font-light text-[#bfc5c5]">{paper.subtitle}</p>
+                <p className="mt-6 text-sm leading-relaxed text-[#9ea2a2]">{paper.abstract}</p>
+
+                <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                  <div className="rounded-2xl border border-white/12 bg-white/[0.015] p-4">
+                    <div className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#7a7a7a]">Release Window</div>
+                    <div className="mt-2 text-base font-light text-[#d2fdff]">{paper.release}</div>
+                  </div>
+                  <div className="rounded-2xl border border-white/12 bg-white/[0.015] p-4">
+                    <div className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#7a7a7a]">Methodology Stamp</div>
+                    <div className="mt-2 text-base font-light text-[#d2fdff]">{paper.methodologyStamp}</div>
+                  </div>
+                  <div className="rounded-2xl border border-white/12 bg-white/[0.015] p-4">
+                    <div className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#7a7a7a]">Status</div>
+                    <div className="mt-2 text-base font-light text-[#d2fdff]">{paper.status}</div>
+                  </div>
+                </div>
+
+                <div className="mt-8 flex flex-wrap items-center gap-4 text-[10px] font-mono uppercase tracking-[0.25em] text-[#8d8d8d]">
+                  <span>{paper.wordCount}</span>
+                  <span className="h-px w-12 bg-white/15" />
+                  <span>PROPRIETARY RELEASE</span>
+                  <span className="h-px w-12 bg-white/15" />
+                  <span>FIRST-MOVER ARCHIVE</span>
+                </div>
+
+                <Link
+                  href={paper.href}
+                  className="mt-8 inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.25em] text-[#fafafa] hover:text-[#00ffff]"
+                >
+                  Read the brief
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-text-primary mb-6">
-                Principal Researcher
-              </h2>
-              <h3 className="text-xl text-accent mb-4">Gavin Sangedha</h3>
-              <p className="text-text-secondary mb-6 leading-relaxed">
-                Gavin Sangedha is the founder and Principal Researcher at Alpha Vector Technologies, 
-                specializing in cybersecurity forensics, AI governance frameworks, and digital 
-                accountability research. His work focuses on developing mathematically rigorous 
-                methodologies for attributing corporate liability in algorithmic system failures.
-              </p>
-              <p className="text-text-secondary mb-6 leading-relaxed">
-                His research synthesizes decades of computer science advances in formal verification, 
-                causal inference, and cryptographic proofs with established legal doctrines to create 
-                frameworks that satisfy Federal Rules of Evidence standards and Daubert admissibility 
-                requirements.
-              </p>
-              <div className="flex flex-col space-y-3">
-                <div className="flex items-center space-x-3">
-                  <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <span className="text-text-secondary text-sm">South Australia</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <span className="text-text-secondary text-sm font-mono">gavin.sangedha@alphavectortech.com</span>
-                </div>
-              </div>
-            </div>
+      <section className="border-t border-white/10 px-6 sm:px-10 md:px-16 lg:px-24 py-24">
+        <div className="mx-auto grid max-w-6xl gap-16 lg:grid-cols-[2fr_1fr]">
+          <div>
+            <span className="text-[9px] font-mono tracking-[0.3em] text-[#6b6b6b] uppercase mb-6 block">
+              POSITIONING
+            </span>
+            <h2 className="text-4xl md:text-6xl font-light leading-[0.95] mb-8">
+              We are the <span className="text-[#00ffff]">standard body.</span>
+            </h2>
+            <p className="text-lg font-light text-[#9a9a9a] leading-relaxed">
+              Not a consultancy. Not an advisory firm. We establish the
+              <span className="text-[#fafafa]"> mathematical bounds of executive culpability</span> before the
+              regulatory frameworks exist to enforce them.
+            </p>
+          </div>
 
-            <div className="bg-surface-elevated rounded-xl p-8 border border-border-subtle">
-              <h4 className="text-lg font-semibold text-text-primary mb-6">Research Specializations</h4>
-              <ul className="space-y-4">
-                {[
-                  "Causal Forensics & Algorithmic Negligence Attribution",
-                  "Judea Pearl's Do-Calculus for Legal Causation",
-                  "Tree of Thoughts / Graph of Thoughts Analysis",
-                  "Post-Quantum Cryptographic Migration",
-                  "Byzantine Fault Tolerance & DLT Security",
-                  "Caremark Oversight Duty Compliance",
-                  "Daubert-Admissible Technical Expert Testimony"
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start space-x-3">
-                    <svg className="w-5 h-5 text-success mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-text-secondary text-sm">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="grid grid-cols-2 gap-8">
+            {[{ value: "7", label: "RESEARCH PAPERS" }, { value: "$32B", label: "TAM COVERAGE" }, { value: "100%", label: "DAUBERT READY" }, { value: "∞", label: "LIABILITY MAPPED" }].map((metric) => (
+              <div key={metric.label} className="p-6 border border-white/10 relative">
+                <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-[#00ffff] opacity-40" />
+                <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-[#00ffff] opacity-40" />
+                <div className="text-4xl font-extralight text-[#00ffff] mb-2">{metric.value}</div>
+                <div className="text-[9px] font-mono tracking-[0.2em] text-[#6b6b6b]">{metric.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <Footer />
+      <section className="border-t border-white/10 px-6 sm:px-10 md:px-16 lg:px-24 py-24">
+        <div className="mx-auto max-w-4xl text-center">
+          <span className="text-[9px] font-mono tracking-[0.3em] text-[#6b6b6b] uppercase mb-8 block">
+            ESTABLISH.LINK
+          </span>
+          <h2 className="text-4xl md:text-6xl font-light leading-[0.95] mb-8">
+            Ready to define <span className="text-[#00ffff]">accountability?</span>
+          </h2>
+          <Link href="/contact" className="inline-flex items-center justify-center px-12 py-5 rounded-full bg-[#00ffff] text-[#050505] font-mono text-[10px] uppercase tracking-[0.2em] hover:bg-[#00d4d4]">
+            Initiate Contact
+          </Link>
+        </div>
+      </section>
     </div>
-  );
+  )
 }

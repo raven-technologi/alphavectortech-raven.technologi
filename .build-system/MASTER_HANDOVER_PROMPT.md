@@ -33,7 +33,7 @@ When Claude creates many files rapidly via Desktop Commander:
 - **Principal:** Gavin Sangedha
 - **Domain:** alphavectortech.com
 - **Email:** gavin.sangedha@alphavectortech.com
-- **Location:** South Australia
+- **Location:** Global Operations
 
 ### Purpose
 Institutional-grade website to serve as credibility anchor for Gavin Sangedha's legal action against Coinbase. Must display three research papers in their entirety with professional presentation suitable for SEC/Federal Court submission.
