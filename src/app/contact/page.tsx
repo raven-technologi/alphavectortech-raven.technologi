@@ -14,6 +14,18 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    
+    // Track contact form submission
+    if (typeof window !== 'undefined' && typeof (window as any).gtag !== 'undefined') {
+      (window as any).gtag('event', 'contact_form_submit', {
+        form_location: '/contact',
+        inquiry_type: formData.inquiryType,
+        organization: formData.organization || 'not_provided',
+        has_organization: formData.organization.length > 0,
+      })
+      console.log('Contact Form Submission Tracked:', formData.inquiryType)
+    }
+    
     alert('Thank you for your inquiry. We will respond within 2-3 business days.')
   }
 
